@@ -55,7 +55,7 @@ func addTCP(tcp *layers.TCP) []conntrack.ConnAttr {
 	}
 }
 
-func extractCtAttrs(data []byte) (err error, family conntrack.CtFamily, attrs []conntrack.ConnAttr) {
+func extractCtAttrs(data []byte) (family conntrack.CtFamily, attrs []conntrack.ConnAttr, err error) {
 	var version = (data)[0] >> 4
 	if version == 4 {
 		family = conntrack.CtIPv4

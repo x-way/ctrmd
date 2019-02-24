@@ -2,17 +2,25 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
+	"log"
+	"log/syslog"
 
 	conntrack "github.com/florianl/go-conntrack"
 	nflog "github.com/florianl/go-nflog"
 )
 
+var nflogGroup = flag.Int("g", 666, "NFLOG group to listen on")
+
 func main() {
+	logger, _ := syslog.New(syslog.LOG_DAEMON|syslog.LOG_INFO, "ctrmd")
+	flag.Parse()
+
+	logger.Info("Opening conntrack socket")
 	nfct, err := conntrack.Open()
 	if err != nil {
-		fmt.Printf("Could not open conntrack socket: %v\n", err)
-		return
+		log.Fatal(logger.Err(fmt.Sprintf("Could not open conntrack socket: %v\n", err)))
 	}
 	defer nfct.Close()
 
@@ -20,32 +28,33 @@ func main() {
 	defer cancel()
 
 	config := nflog.Config{
-		Group:    666,
+		Group:    uint16(*nflogGroup),
 		Copymode: nflog.NfUlnlCopyPacket,
 	}
+	logger.Info(fmt.Sprintf("Opening NFLOG socket for group %d", *nflogGroup))
 	nfl, err := nflog.Open(&config)
 	if err != nil {
-		fmt.Printf("Could not open nflog socket: %v\n", err)
-		return
+		log.Fatal(logger.Err(fmt.Sprintf("Could not open nflog socket: %v\n", err)))
 	}
 	defer nfl.Close()
 
 	fn := func(m nflog.Msg) int {
-		if err, ctFamily, attrs := extractCtAttrs(m[nflog.AttrPayload].([]byte)); err != nil {
-			fmt.Printf("Could not extract CT attrs from packet: %v\n", err)
+		if ctFamily, attrs, err := extractCtAttrs(m[nflog.AttrPayload].([]byte)); err != nil {
+			logger.Warning(fmt.Sprintf("Could not extract CT attrs from packet: %v\n", err))
 		} else {
 			//fmt.Printf("extracted: err: %v family: %v attrs: %v\n", err, ctFamily, attrs)
 			if err = nfct.Delete(conntrack.Ct, ctFamily, attrs); err != nil {
-				fmt.Printf("conntrack Delete failed: %v\n", err)
+				logger.Warning(fmt.Sprintf("conntrack Delete failed: %v\n", err))
 			}
 		}
 
 		return 0
 	}
+	logger.Info("Registering nflog callback")
 	if err := nfl.Register(ctx, fn); err != nil {
-		fmt.Printf("Could not open nflog socket: %v\n", err)
-		return
+		log.Fatal(logger.Err(fmt.Sprintf("Could not register nflog callback: %v\n", err)))
 	}
 
 	<-ctx.Done()
+	logger.Info("Terminating")
 }
