@@ -4,7 +4,7 @@
 
 ctrmd provides a mechanism to delete conntrack entries with iptables rules.
 
-As there is no direct support for deleting conntrack entries in iptables, the following approach is used:
+As there is no native support for deleting conntrack entries in iptables, the following approach is used:
 - packets are sent to a dedicated NFLOG group in iptables
 - ctrmd listens on this NFLOG group and issues conntrack delete instructions for each received packet
 
