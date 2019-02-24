@@ -1,0 +1,21 @@
+language: go
+
+os: linux
+
+go:
+  - "1.10.x"
+  - "1.11.x"
+
+matrix:
+  include:
+    - go: master
+      if: branch = master AND type = cron
+
+install:
+  - go get golang.org/x/lint/golint
+  - go get -t -d ./...
+
+script:
+  - go vet ./...
+  - golint -set_exit_status ./...
+  - go test -v ./...
