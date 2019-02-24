@@ -1,4 +1,6 @@
 # ctrmd - conntrack entry removal daemon
+[![Build Status](https://travis-ci.org/x-way/ctrmd.svg?branch=master)](http://travis-ci.org/x-way/ctrmd)
+[![Go Report Card](https://goreportcard.com/badge/github.com/x-way/ctrmd)](https://goreportcard.com/report/github.com/x-way/ctrmd)
 
 ctrmd provides a mechanism to delete conntrack entries with iptables rules.
 
