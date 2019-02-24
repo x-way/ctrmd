@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build: &build-template
+    docker:
+      - image: circleci/golang:1.9
+
+    working_directory: /go/src/github.com/x-way/ctrmd
+    steps:
+      - checkout
+      - run: go get -v -t -d ./...
+      - run: golint -set_exit_status ./...
+      - run: go test -v ./...
+
+  build-1.10:
+    <<: *build-template
+    docker:
+      - image: circleci/golang:1.10
+
+  build-1.11:
+    <<: *build-template
+    docker:
+      - image: circleci/golang:1.11
