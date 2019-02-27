@@ -14,6 +14,7 @@ jobs:
     working_directory: /go/src/github.com/x-way/ctrmd
     steps:
       - checkout
+      - run: go version
       - run: go get golang.org/x/lint/golint
       - run: go get -v -t -d ./...
       - run: go vet ./...
