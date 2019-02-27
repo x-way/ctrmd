@@ -3,13 +3,13 @@ workflows:
   version: 2
   build:
     jobs:
-      - build
+      - build-latest
       - build-1.10
       - build-1.11
 jobs:
-  build: &build-template
+  build-latest: &build-template
     docker:
-      - image: circleci/golang:1.9
+      - image: circleci/golang:latest
 
     working_directory: /go/src/github.com/x-way/ctrmd
     steps:
