@@ -2,7 +2,9 @@ language: go
 
 os: linux
 
-go: "1.12.x"
+go:
+  - "1.12.x"
+  - master
 
 matrix:
   include:
