@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"log/syslog"
+	"time"
 
 	conntrack "github.com/florianl/go-conntrack"
 	nflog "github.com/florianl/go-nflog"
@@ -18,7 +19,7 @@ func main() {
 	flag.Parse()
 
 	logger.Info("Opening conntrack socket")
-	nfct, err := conntrack.Open()
+	nfct, err := conntrack.Open(&conntrack.Config{})
 	if err != nil {
 		log.Fatal(logger.Err(fmt.Sprintf("Could not open conntrack socket: %v\n", err)))
 	}
@@ -28,8 +29,9 @@ func main() {
 	defer cancel()
 
 	config := nflog.Config{
-		Group:    uint16(*nflogGroup),
-		Copymode: nflog.NfUlnlCopyPacket,
+		Group:       uint16(*nflogGroup),
+		Copymode:    nflog.NfUlnlCopyPacket,
+		ReadTimeout: 30 * time.Second,
 	}
 	logger.Info(fmt.Sprintf("Opening NFLOG socket for group %d", *nflogGroup))
 	nfl, err := nflog.Open(&config)
