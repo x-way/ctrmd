@@ -15,7 +15,10 @@ import (
 var nflogGroup = flag.Int("g", 666, "NFLOG group to listen on")
 
 func main() {
-	logger, _ := syslog.New(syslog.LOG_DAEMON|syslog.LOG_INFO, "ctrmd")
+	logger, err := syslog.New(syslog.LOG_DAEMON|syslog.LOG_INFO, "ctrmd")
+	if err != nil {
+		log.Fatal("Could not create logger: ", err)
+	}
 	flag.Parse()
 
 	logger.Info("Opening conntrack socket")
