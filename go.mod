@@ -3,7 +3,9 @@ module github.com/x-way/ctrmd
 go 1.12
 
 require (
-	github.com/florianl/go-conntrack v0.0.0-20190424094210-e011089a06c0
+	github.com/florianl/go-conntrack v0.0.0-20190429101121-fb09150ed07b
 	github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4
 	github.com/google/gopacket v1.1.16
+	github.com/x-way/iptables-tracer v0.0.0-20190502200825-d3aba5b1e83d
+	golang.org/x/sys v0.0.0-20190415081028-16da32be82c5
 )

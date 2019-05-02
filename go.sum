@@ -1,5 +1,7 @@
 github.com/florianl/go-conntrack v0.0.0-20190424094210-e011089a06c0 h1:pWIHYSkJsj7kUO94EjQoSA+MPlnWThhTHQ1k2EH4uJA=
 github.com/florianl/go-conntrack v0.0.0-20190424094210-e011089a06c0/go.mod h1:bVjd6LQuEVqwX8Mw3sMv22v569+H/3TQWW6itTFrBh8=
+github.com/florianl/go-conntrack v0.0.0-20190429101121-fb09150ed07b h1:70szY4XIV3Txth4VOkjK5dJP8aDkqFk0DVKXdhZeAKU=
+github.com/florianl/go-conntrack v0.0.0-20190429101121-fb09150ed07b/go.mod h1:bVjd6LQuEVqwX8Mw3sMv22v569+H/3TQWW6itTFrBh8=
 github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4 h1:5/JwrpdIDlN02WLI2tXoxQC89WNUuIKtrBiXjQLSkN8=
 github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4/go.mod h1:F0bpPphpbGBVmycNnkDFlHFpNY420laFpP0j1VL271I=
 github.com/google/go-cmp v0.2.0 h1:+dTQ8DZQJz0Mb/HjFlkptS1FeQ4cWSnN941F8aEG4SQ=
@@ -9,6 +11,18 @@ github.com/google/gopacket v1.1.16/go.mod h1:UCLx9mCmAwsVbn6qQl1WIEt2SO7Nd2fD0th
 github.com/mdlayher/netlink v0.0.0-20190313131330-258ea9dff42c/go.mod h1:eQB3mZE4aiYnlUsyGGCOpPETfdQq4Jhsgf1fk3cwQaA=
 github.com/mdlayher/netlink v0.0.0-20190411141321-3cae06de9d30 h1:PTuC871eMyykb2rns5n21nJvbIQJ7c1HKd0jHd+CgnA=
 github.com/mdlayher/netlink v0.0.0-20190411141321-3cae06de9d30/go.mod h1:t19erlH/I/040715SD0/ktZi33scgSEuOlp57AIFe/c=
+github.com/x-way/iptables-tracer v0.0.0-20190501154639-7d0cedc1af8f h1:CbQ/BC1PsVJEx6DNVHTtR7d6scKUjBUpHVck0EvlNZE=
+github.com/x-way/iptables-tracer v0.0.0-20190501154639-7d0cedc1af8f/go.mod h1:R7kXJQuDstZyu7JmADbAFti/LWBBxzEfTXldYJdCBoU=
+github.com/x-way/iptables-tracer v0.0.0-20190501154939-f449dbcfaee5 h1:P6Ex2MPSLZmkX520ZgHKF6WH0wjeIsK7iTIZB7syqA8=
+github.com/x-way/iptables-tracer v0.0.0-20190501154939-f449dbcfaee5/go.mod h1:R7kXJQuDstZyu7JmADbAFti/LWBBxzEfTXldYJdCBoU=
+github.com/x-way/iptables-tracer v0.0.0-20190501163931-168636dda40a h1:vQ13uFv64EATy/XC4sPyRpvcrjZNrlKb15+YNvz2/dE=
+github.com/x-way/iptables-tracer v0.0.0-20190501163931-168636dda40a/go.mod h1:R7kXJQuDstZyu7JmADbAFti/LWBBxzEfTXldYJdCBoU=
+github.com/x-way/iptables-tracer v0.0.0-20190501165141-f974407f87e1 h1:Smz1/16r0ucB9iOj/gfGgyG7LS6unlwOuOAMuP36xx8=
+github.com/x-way/iptables-tracer v0.0.0-20190501165141-f974407f87e1/go.mod h1:R7kXJQuDstZyu7JmADbAFti/LWBBxzEfTXldYJdCBoU=
+github.com/x-way/iptables-tracer v0.0.0-20190502195204-9a3e3a32171d h1:hf7pMtST63/jNq2SEQ8JGg5axqhwvV/daFOyQa2zDR8=
+github.com/x-way/iptables-tracer v0.0.0-20190502195204-9a3e3a32171d/go.mod h1:R7kXJQuDstZyu7JmADbAFti/LWBBxzEfTXldYJdCBoU=
+github.com/x-way/iptables-tracer v0.0.0-20190502200825-d3aba5b1e83d h1:OuPFYngTIC8ZKfAHAdHqF5svt/I41fYHviPGGjqTM7A=
+github.com/x-way/iptables-tracer v0.0.0-20190502200825-d3aba5b1e83d/go.mod h1:R7kXJQuDstZyu7JmADbAFti/LWBBxzEfTXldYJdCBoU=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20190311183353-d8887717615a/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3 h1:0GoQqolDA55aaLxZyTzK/Y2ePZzZTUrRacwib7cNsYQ=
