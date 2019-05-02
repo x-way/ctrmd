@@ -7,6 +7,7 @@ import (
 	conntrack "github.com/florianl/go-conntrack"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
+	"golang.org/x/sys/unix"
 )
 
 func addIPv6IPs(pkt gopacket.Packet) (attrs []conntrack.ConnAttr) {
@@ -55,7 +56,55 @@ func addTCP(tcp *layers.TCP) []conntrack.ConnAttr {
 	}
 }
 
-func extractCtAttrs(data []byte) (family conntrack.CtFamily, attrs []conntrack.ConnAttr, err error) {
+func extractCtAttrsFromCt(data []byte) (family conntrack.CtFamily, attrs []conntrack.ConnAttr, err error) {
+	var conn conntrack.Conn
+	if conn, err = conntrack.ParseAttributes(data); err != nil {
+		return
+	}
+
+	// extract family
+	if data, ok := conn[conntrack.AttrOrigL3Proto]; ok {
+		family = conntrack.CtFamily(data[0])
+	} else {
+		err = fmt.Errorf("Error decoding CT attributes from NFLOG, no AttrOrigL3Proto found")
+		return
+	}
+
+	// mandatory attrs to copy
+	for _, attr := range []conntrack.ConnAttrType{
+		conntrack.AttrOrigIPv4Src,
+		conntrack.AttrOrigIPv4Dst,
+		conntrack.AttrOrigL4Proto,
+	} {
+		if data, ok := conn[attr]; ok {
+			attrs = append(attrs, conntrack.ConnAttr{Type: attr, Data: data})
+		} else {
+			err = fmt.Errorf("Error decoding CT attributes from NFLOG, mandatory attribute 0x%x not found", attr)
+			return
+		}
+	}
+
+	// optional attrs to copy
+	for _, attr := range []conntrack.ConnAttrType{
+		conntrack.AttrOrigPortSrc,
+		conntrack.AttrOrigPortDst,
+		conntrack.AttrIcmpType,
+		conntrack.AttrIcmpCode,
+		conntrack.AttrIcmpID,
+	} {
+		if data, ok := conn[attr]; ok {
+			// xxx: ugly hack, not sure where exactly the problem is originated, but we do not get the proper/correct IcmpType from the NFLOG CT info, thus this heuristic to force the type to ICMP echo request when it was ICMP echo reply
+			if family == unix.AF_INET && attr == conntrack.AttrIcmpType && data[0] == 0 {
+				data = []byte{8}
+			}
+			attrs = append(attrs, conntrack.ConnAttr{Type: attr, Data: data})
+		}
+	}
+
+	return
+}
+
+func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []conntrack.ConnAttr, err error) {
 	var version = (data)[0] >> 4
 	if version == 4 {
 		family = conntrack.CtIPv4
