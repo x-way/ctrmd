@@ -6,16 +6,46 @@ import (
 	"fmt"
 	"log"
 	"log/syslog"
+	"net"
+	"net/http"
 	"time"
 
 	conntrack "github.com/florianl/go-conntrack"
 	nflog "github.com/florianl/go-nflog"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	ctprint "github.com/x-way/iptables-tracer/pkg/ctprint"
 	format "github.com/x-way/iptables-tracer/pkg/format"
+	"golang.org/x/sys/unix"
 )
 
-var nflogGroup = flag.Int("g", 666, "NFLOG group to listen on")
-var debug = flag.Bool("d", false, "debug output")
+var (
+	nflogGroup    = flag.Int("g", 666, "NFLOG group to listen on")
+	debug         = flag.Bool("d", false, "debug output")
+	metricsSocket = flag.String("m", "", "path of UNIX socket to use for exposing prometheus metrics")
+)
+
+var (
+	errorCounter = prometheus.NewCounterVec(
+		prometheus.CounterOpts{
+			Name: "ctrmd_errors_total",
+			Help: "The total number of errors",
+		},
+		[]string{"family", "protocol", "ctinfo", "type"},
+	)
+	deleteCounter = prometheus.NewCounterVec(
+		prometheus.CounterOpts{
+			Name: "ctrmd_deletions_total",
+			Help: "The total number of deleted conntrack entries",
+		},
+		[]string{"family", "protocol", "ctinfo"},
+	)
+)
+
+func init() {
+	prometheus.MustRegister(errorCounter)
+	prometheus.MustRegister(deleteCounter)
+}
 
 func main() {
 	logger, err := syslog.New(syslog.LOG_DAEMON|syslog.LOG_INFO, "ctrmd")
@@ -23,6 +53,26 @@ func main() {
 		log.Fatal("Could not create logger: ", err)
 	}
 	flag.Parse()
+
+	if *metricsSocket != "" {
+		logger.Info(fmt.Sprintf("Opening metrics socket %s", *metricsSocket))
+		if *debug {
+			fmt.Printf("Opening metrics socket %s\n", *metricsSocket)
+		}
+		unixListener, err := net.Listen("unix", *metricsSocket)
+		if err != nil {
+			log.Fatal("Could not create metrics socket: ", err)
+		}
+		defer unixListener.Close()
+		metricsServer := &http.Server{
+			Handler: promhttp.Handler(),
+		}
+		go func() {
+			if err := metricsServer.Serve(unixListener); err != nil {
+				log.Fatal("Metrics server failed: ", err)
+			}
+		}()
+	}
 
 	logger.Info("Opening conntrack socket")
 	nfct, err := conntrack.Open(&conntrack.Config{})
@@ -62,6 +112,9 @@ func main() {
 		var fwMark uint32
 		var iif string
 		var oif string
+		familyStr := "unknown"
+		protoStr := "0"
+		ctinfoStr := "0x0"
 		if ct, ok = m[nflog.AttrCt]; ok {
 			ctBytes = ct.([]byte)
 			if ctFamily, attrs, err = extractCtAttrsFromCt(ctBytes); err != nil {
@@ -69,8 +122,10 @@ func main() {
 				if *debug {
 					fmt.Printf("Could not extract CT attrs from CT info: %v\n", err)
 				}
+				errorCounter.WithLabelValues(familyStr, protoStr, ctinfoStr, "ctinfo_extract").Inc()
 				return 0
 			}
+			familyStr, protoStr = familyProto(ctFamily, attrs)
 		} else {
 			if *debug {
 				fmt.Println("No NFLOG CT info found, decoding information from payload")
@@ -82,16 +137,19 @@ func main() {
 				if ctFamily, attrs, err = extractCtAttrsFromPayload(payloadBytes); err != nil {
 					logger.Warning(fmt.Sprintf("Could not extract CT attrs from packet payload: %v\n", err))
 					if *debug {
-						fmt.Printf("Could not extract CT attrs from CT info: %v\n", err)
+						fmt.Printf("Could not extract CT attrs from CT packet payload: %v\n", err)
 					}
+					errorCounter.WithLabelValues(familyStr, protoStr, ctinfoStr, "payload_extract").Inc()
 					return 0
 				}
+				familyStr, protoStr = familyProto(ctFamily, attrs)
 			}
 		} else {
 			logger.Warning(fmt.Sprintf("No NFLOG payload found, ignoring packet\n"))
 			if *debug {
 				fmt.Println("No NFLOG payload found, ignoring packet")
 			}
+			errorCounter.WithLabelValues(familyStr, protoStr, ctinfoStr, "no_payload").Inc()
 			return 0
 		}
 
@@ -110,6 +168,7 @@ func main() {
 		}
 		if cti, found := m[nflog.AttrCtInfo]; found {
 			ctInfo = cti.(uint32)
+			ctinfoStr = fmt.Sprintf("0x%x", ctInfo)
 		}
 		if len(attrs) > 0 {
 			logger.Info(fmt.Sprintf("Deleting CT entry: family: %v attrs: %v\n", ctFamily, attrs))
@@ -124,12 +183,16 @@ func main() {
 				if *debug {
 					fmt.Printf("conntrack Delete failed: %v\n", err)
 				}
+				errorCounter.WithLabelValues(familyStr, protoStr, ctinfoStr, "delete").Inc()
+			} else {
+				deleteCounter.WithLabelValues(familyStr, protoStr, ctinfoStr).Inc()
 			}
 		} else {
 			logger.Warning(fmt.Sprintf("List of extracted CT attributes is empty, ignoring packet\n"))
 			if *debug {
 				fmt.Println("List of extracted CT attributes is empty, ignoring packet")
 			}
+			errorCounter.WithLabelValues(familyStr, protoStr, ctinfoStr, "no_ctattrs").Inc()
 		}
 
 		return 0
@@ -150,4 +213,19 @@ func formatPkt(ip6tables bool, ts time.Time, fwMark uint32, iif, oif string, pay
 	fmtStr := "%s 0x%08x%s %s  [In:%s Out:%s]"
 	output = fmt.Sprintf(fmtStr, ts.Format("15:04:05.000000"), fwMark, ctStr, packetStr, iif, oif)
 	return output
+}
+
+func familyProto(ctFamily conntrack.CtFamily, attrs []conntrack.ConnAttr) (family string, proto string) {
+	if ctFamily == unix.AF_INET {
+		family = "inet"
+	} else {
+		family = "inet6"
+	}
+	proto = "0"
+	for _, attr := range attrs {
+		if attr.Type == conntrack.AttrOrigL4Proto && len(attr.Data) > 0 {
+			proto = fmt.Sprintf("%d", attr.Data[0])
+		}
+	}
+	return
 }
