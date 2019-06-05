@@ -100,23 +100,20 @@ func main() {
 	}
 	defer nfl.Close()
 
-	fn := func(m nflog.Msg) int {
+	fn := func(a nflog.Attribute) int {
 		var ctFamily conntrack.CtFamily
 		var attrs []conntrack.ConnAttr
 		var err error
-		var ct interface{}
-		var payload interface{}
 		var ctBytes []byte
 		var payloadBytes []byte
-		var ok bool
 		var fwMark uint32
 		var iif string
 		var oif string
 		familyStr := "unknown"
 		protoStr := "0"
 		ctinfoStr := "0x0"
-		if ct, ok = m[nflog.AttrCt]; ok {
-			ctBytes = ct.([]byte)
+		if a.Ct != nil {
+			ctBytes = *a.Ct
 			if ctFamily, attrs, err = extractCtAttrsFromCt(ctBytes); err != nil {
 				logger.Warning(fmt.Sprintf("Could not extract CT attrs from CT info: %v\n", err))
 				if *debug {
@@ -131,8 +128,8 @@ func main() {
 				fmt.Println("No NFLOG CT info found, decoding information from payload")
 			}
 		}
-		if payload, ok = m[nflog.AttrPayload]; ok {
-			payloadBytes = payload.([]byte)
+		if a.Payload != nil {
+			payloadBytes = *a.Payload
 			if len(attrs) == 0 {
 				if ctFamily, attrs, err = extractCtAttrsFromPayload(payloadBytes); err != nil {
 					logger.Warning(fmt.Sprintf("Could not extract CT attrs from packet payload: %v\n", err))
@@ -154,20 +151,20 @@ func main() {
 		}
 
 		var ctInfo = ^uint32(0)
-		if mark, found := m[nflog.AttrMark]; found {
-			fwMark = mark.(uint32)
+		if a.Mark != nil {
+			fwMark = *a.Mark
 		}
-		if iifIx, found := m[nflog.AttrIfindexIndev]; found {
-			iif = format.GetIfaceName(iifIx.(uint32))
+		if a.InDev != nil {
+			iif = format.GetIfaceName(*a.InDev)
 		}
-		if oifIx, found := m[nflog.AttrIfindexOutdev]; found {
-			oif = format.GetIfaceName(oifIx.(uint32))
+		if a.OutDev != nil {
+			oif = format.GetIfaceName(*a.OutDev)
 		}
-		if ct, found := m[nflog.AttrCt]; found {
-			ctBytes = ct.([]byte)
+		if a.Ct != nil {
+			ctBytes = *a.Ct
 		}
-		if cti, found := m[nflog.AttrCtInfo]; found {
-			ctInfo = cti.(uint32)
+		if a.CtInfo != nil {
+			ctInfo = *a.CtInfo
 			ctinfoStr = fmt.Sprintf("0x%x", ctInfo)
 		}
 		if len(attrs) > 0 {
