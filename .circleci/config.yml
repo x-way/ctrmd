@@ -31,6 +31,11 @@ jobs:
       - run: go vet ./...
       - run: golint -set_exit_status ./...
       - run: go test -v ./...
+      - run:
+          name: codecov
+          command: |
+                    PATH=/tmp/sbin:$PATH go test -race -coverprofile=coverage.txt -covermode=atomic
+                    bash <(curl -s https://codecov.io/bash)
 
   build-1.12:
     <<: *build-template
