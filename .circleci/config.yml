@@ -26,7 +26,15 @@ jobs:
       - checkout
       - run: go version
       - run: go vet ./...
-      - run: go test -v ./...
+      - run:
+          name: Run go tests
+          environment:
+            GOTESTSUM_JUNITFILE: /tmp/test-reports/gotests/junit.xml
+          command: |
+                    mkdir -p /tmp/test-reports/gotests
+                    PATH=/tmp/sbin:$PATH gotestsum
+      - store_test_results:
+          path: /tmp/test-reports
       - run:
           name: codecov
           command: |
