@@ -1,5 +1,4 @@
 # ctrmd - conntrack entry removal daemon
-[![Build Status](https://travis-ci.org/x-way/ctrmd.svg?branch=master)](http://travis-ci.org/x-way/ctrmd)
 [![CircleCI](https://circleci.com/gh/x-way/ctrmd.svg?style=svg)](https://circleci.com/gh/x-way/ctrmd)
 [![Go Report Card](https://goreportcard.com/badge/github.com/x-way/ctrmd)](https://goreportcard.com/report/github.com/x-way/ctrmd)
 
