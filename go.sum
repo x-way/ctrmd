@@ -1,7 +1,8 @@
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973 h1:xJ4a3vCFaGF/jqvzLMYoU8P317H5OQ+Via4RmuPwCS0=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
-github.com/florianl/go-conntrack v0.0.0-20190429101121-fb09150ed07b h1:70szY4XIV3Txth4VOkjK5dJP8aDkqFk0DVKXdhZeAKU=
 github.com/florianl/go-conntrack v0.0.0-20190429101121-fb09150ed07b/go.mod h1:bVjd6LQuEVqwX8Mw3sMv22v569+H/3TQWW6itTFrBh8=
+github.com/florianl/go-conntrack v0.0.0-20190812061645-92f91d0d07f0 h1:JcAHQEZqeN6cO2WxTX+lpf5zHDAAFnTzBuK7um2/pcw=
+github.com/florianl/go-conntrack v0.0.0-20190812061645-92f91d0d07f0/go.mod h1:bVjd6LQuEVqwX8Mw3sMv22v569+H/3TQWW6itTFrBh8=
 github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4 h1:5/JwrpdIDlN02WLI2tXoxQC89WNUuIKtrBiXjQLSkN8=
 github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4/go.mod h1:F0bpPphpbGBVmycNnkDFlHFpNY420laFpP0j1VL271I=
 github.com/golang/protobuf v1.2.0 h1:P3YflyNX/ehuJFLhxviNdFxQPkGK5cDcApsge1SqnvM=

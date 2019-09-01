@@ -173,15 +173,11 @@ func main() {
 			ctinfoStr = fmt.Sprintf("0x%x", ctInfo)
 		}
 		if len(attrs) > 0 {
-			ipv6 := true
-			if ctFamily == unix.AF_INET {
-				ipv6 = false
-			}
 			logger.Info(fmt.Sprintf("Deleting CT entry: family: %v attrs: %v\n", ctFamily, attrs))
-			logger.Info(fmt.Sprintf(" Packet: %s\n", formatPkt(ipv6, time.Now(), fwMark, iif, oif, payloadBytes, ctBytes, ctInfo)))
+			logger.Info(fmt.Sprintf(" Packet: %s\n", formatPkt(ctFamily, time.Now(), fwMark, iif, oif, payloadBytes, ctBytes, ctInfo)))
 			if *debug {
 				fmt.Printf("Deleting CT entry: family: %v attrs: %v\n", ctFamily, attrs)
-				fmt.Printf(" Packet: %s\n", formatPkt(ipv6, time.Now(), fwMark, iif, oif, payloadBytes, ctBytes, ctInfo))
+				fmt.Printf(" Packet: %s\n", formatPkt(ctFamily, time.Now(), fwMark, iif, oif, payloadBytes, ctBytes, ctInfo))
 				ctprint.Print(ctBytes)
 			}
 			if err = nfct.Delete(conntrack.Ct, ctFamily, attrs); err != nil {
@@ -212,13 +208,13 @@ func main() {
 	logger.Info("Terminating")
 }
 
-func formatPkt(ipv6 bool, ts time.Time, fwMark uint32, iif, oif string, payload []byte, ct []byte, ctInfo uint32) string {
+func formatPkt(ctFamily conntrack.CtFamily, ts time.Time, fwMark uint32, iif, oif string, payload []byte, ct []byte, ctInfo uint32) string {
 	var output string
 	packetStr := ""
-	if ipv6 {
-		packetStr = pktdump.Format(gopacket.NewPacket(payload, layers.LayerTypeIPv6, gopacket.Default))
-	} else {
+	if ctFamily == unix.AF_INET {
 		packetStr = pktdump.Format(gopacket.NewPacket(payload, layers.LayerTypeIPv4, gopacket.Default))
+	} else {
+		packetStr = pktdump.Format(gopacket.NewPacket(payload, layers.LayerTypeIPv6, gopacket.Default))
 	}
 	ctStr := fmt.Sprintf(" %s 0x%08x", ctprint.InfoString(ctInfo), ctprint.GetCtMark(ct))
 	fmtStr := "%s 0x%08x%s %s  [In:%s Out:%s]"
