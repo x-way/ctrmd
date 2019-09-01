@@ -4,8 +4,6 @@ github.com/florianl/go-conntrack v0.0.0-20190429101121-fb09150ed07b h1:70szY4XIV
 github.com/florianl/go-conntrack v0.0.0-20190429101121-fb09150ed07b/go.mod h1:bVjd6LQuEVqwX8Mw3sMv22v569+H/3TQWW6itTFrBh8=
 github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4 h1:5/JwrpdIDlN02WLI2tXoxQC89WNUuIKtrBiXjQLSkN8=
 github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4/go.mod h1:F0bpPphpbGBVmycNnkDFlHFpNY420laFpP0j1VL271I=
-github.com/florianl/go-nflog v0.0.0-20190605183214-12d7503d0872 h1:TD7gn6+JxLYqR0BbhDPIX0jf5gyy2KC2ncA88v3Gfq0=
-github.com/florianl/go-nflog v0.0.0-20190605183214-12d7503d0872/go.mod h1:8JDwLJ7QDVQ20bJVkhl43K6dkMOI16VWko8ktMB4x8E=
 github.com/golang/protobuf v1.2.0 h1:P3YflyNX/ehuJFLhxviNdFxQPkGK5cDcApsge1SqnvM=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/google/go-cmp v0.2.0 h1:+dTQ8DZQJz0Mb/HjFlkptS1FeQ4cWSnN941F8aEG4SQ=
