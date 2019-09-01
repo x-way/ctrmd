@@ -173,9 +173,9 @@ func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []
 				binary.BigEndian.PutUint16(idBytes, echo.Identifier)
 				attrs = append(attrs, []conntrack.ConnAttr{
 					{Type: conntrack.AttrOrigL4Proto, Data: []byte{58}},
-					{Type: conntrack.AttrIcmpType, Data: []byte{icmpType}},
-					{Type: conntrack.AttrIcmpCode, Data: []byte{icmpCode}},
-					{Type: conntrack.AttrIcmpID, Data: idBytes},
+					{Type: conntrack.AttrIcmpv6Type, Data: []byte{icmpType}},
+					{Type: conntrack.AttrIcmpv6Code, Data: []byte{icmpCode}},
+					{Type: conntrack.AttrIcmpv6ID, Data: idBytes},
 				}...)
 				return
 			}
