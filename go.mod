@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/florianl/go-conntrack v0.0.0-20190429101121-fb09150ed07b
-	github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4
+	github.com/florianl/go-nflog v0.0.0-20190605183214-12d7503d0872
 	github.com/google/gopacket v1.1.17
 	github.com/prometheus/client_golang v0.9.2
 	github.com/x-way/iptables-tracer v0.0.0-20190502201230-2a8aa06a2749
