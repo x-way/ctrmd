@@ -12,10 +12,12 @@ import (
 
 	conntrack "github.com/florianl/go-conntrack"
 	nflog "github.com/florianl/go-nflog"
+	"github.com/google/gopacket"
+	"github.com/google/gopacket/layers"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	ctprint "github.com/x-way/iptables-tracer/pkg/ctprint"
-	format "github.com/x-way/iptables-tracer/pkg/format"
+	"github.com/x-way/pktdump"
 	"golang.org/x/sys/unix"
 )
 
@@ -158,10 +160,10 @@ func main() {
 			fwMark = mark.(uint32)
 		}
 		if iifIx, found := m[nflog.AttrIfindexIndev]; found {
-			iif = format.GetIfaceName(iifIx.(uint32))
+			iif = GetIfaceName(iifIx.(uint32))
 		}
 		if oifIx, found := m[nflog.AttrIfindexOutdev]; found {
-			oif = format.GetIfaceName(oifIx.(uint32))
+			oif = GetIfaceName(oifIx.(uint32))
 		}
 		if ct, found := m[nflog.AttrCt]; found {
 			ctBytes = ct.([]byte)
@@ -171,11 +173,15 @@ func main() {
 			ctinfoStr = fmt.Sprintf("0x%x", ctInfo)
 		}
 		if len(attrs) > 0 {
+			ipv6 := true
+			if ctFamily == unix.AF_INET {
+				ipv6 = false
+			}
 			logger.Info(fmt.Sprintf("Deleting CT entry: family: %v attrs: %v\n", ctFamily, attrs))
-			logger.Info(fmt.Sprintf(" Packet: %s\n", formatPkt(false, time.Now(), fwMark, iif, oif, payloadBytes, ctBytes, ctInfo)))
+			logger.Info(fmt.Sprintf(" Packet: %s\n", formatPkt(ipv6, time.Now(), fwMark, iif, oif, payloadBytes, ctBytes, ctInfo)))
 			if *debug {
 				fmt.Printf("Deleting CT entry: family: %v attrs: %v\n", ctFamily, attrs)
-				fmt.Printf(" Packet: %s\n", formatPkt(false, time.Now(), fwMark, iif, oif, payloadBytes, ctBytes, ctInfo))
+				fmt.Printf(" Packet: %s\n", formatPkt(ipv6, time.Now(), fwMark, iif, oif, payloadBytes, ctBytes, ctInfo))
 				ctprint.Print(ctBytes)
 			}
 			if err = nfct.Delete(conntrack.Ct, ctFamily, attrs); err != nil {
@@ -206,9 +212,14 @@ func main() {
 	logger.Info("Terminating")
 }
 
-func formatPkt(ip6tables bool, ts time.Time, fwMark uint32, iif, oif string, payload []byte, ct []byte, ctInfo uint32) string {
+func formatPkt(ipv6 bool, ts time.Time, fwMark uint32, iif, oif string, payload []byte, ct []byte, ctInfo uint32) string {
 	var output string
-	packetStr := format.Packet(payload, ip6tables)
+	packetStr := ""
+	if ipv6 {
+		packetStr = pktdump.Format(gopacket.NewPacket(payload, layers.LayerTypeIPv6, gopacket.Default))
+	} else {
+		packetStr = pktdump.Format(gopacket.NewPacket(payload, layers.LayerTypeIPv4, gopacket.Default))
+	}
 	ctStr := fmt.Sprintf(" %s 0x%08x", ctprint.InfoString(ctInfo), ctprint.GetCtMark(ct))
 	fmtStr := "%s 0x%08x%s %s  [In:%s Out:%s]"
 	output = fmt.Sprintf(fmtStr, ts.Format("15:04:05.000000"), fwMark, ctStr, packetStr, iif, oif)
@@ -228,4 +239,14 @@ func familyProto(ctFamily conntrack.CtFamily, attrs []conntrack.ConnAttr) (famil
 		}
 	}
 	return
+}
+
+// GetIfaceName takes a network interface index and returns the corresponding name
+func GetIfaceName(index uint32) string {
+	var iface *net.Interface
+	var err error
+	if iface, err = net.InterfaceByIndex(int(index)); err != nil {
+		return ""
+	}
+	return iface.Name
 }
