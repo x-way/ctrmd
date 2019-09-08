@@ -5,6 +5,7 @@ workflows:
     jobs:
       - build-latest
       - build-1.12
+      - build-1.13
   scheduled:
     triggers:
       - schedule:
@@ -16,6 +17,7 @@ workflows:
     jobs:
       - build-latest
       - build-1.12
+      - build-1.13
 
 jobs:
   build-latest: &build-template
@@ -45,3 +47,8 @@ jobs:
     <<: *build-template
     docker:
       - image: circleci/golang:1.12
+
+  build-1.13:
+    <<: *build-template
+    docker:
+      - image: circleci/golang:1.13
