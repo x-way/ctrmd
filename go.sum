@@ -25,6 +25,7 @@ github.com/golang/protobuf v1.3.2/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5y
 github.com/google/go-cmp v0.2.0 h1:+dTQ8DZQJz0Mb/HjFlkptS1FeQ4cWSnN941F8aEG4SQ=
 github.com/google/go-cmp v0.2.0/go.mod h1:oXzfMopK8JAjlY9xF4vHSVASa0yLyX7SntLO5aqRK0M=
 github.com/google/go-cmp v0.3.0/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMywk6iLU=
+github.com/google/go-cmp v0.3.1/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMywk6iLU=
 github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=
 github.com/google/gopacket v1.1.16 h1:u6Afvia5C5srlLcbTwpHaFW918asLYPxieziOaWwz8M=
 github.com/google/gopacket v1.1.16/go.mod h1:UCLx9mCmAwsVbn6qQl1WIEt2SO7Nd2fD0th1TBAsqBw=
@@ -77,6 +78,8 @@ github.com/x-way/iptables-tracer v0.0.0-20190502201230-2a8aa06a2749 h1:pmnUSur0A
 github.com/x-way/iptables-tracer v0.0.0-20190502201230-2a8aa06a2749/go.mod h1:R7kXJQuDstZyu7JmADbAFti/LWBBxzEfTXldYJdCBoU=
 github.com/x-way/iptables-tracer v0.0.0-20190901125328-c5a99305a64c h1:M7/ix5ozslD5nbOHMeHRJdgw6H5CRI1jgMGq9xBDhJ8=
 github.com/x-way/iptables-tracer v0.0.0-20190901125328-c5a99305a64c/go.mod h1:uabE43V/GyXCuoHRBEtJOI6rFZ31l6y4q8JGx0pGaQE=
+github.com/x-way/iptables-tracer v0.0.0-20190916233523-fbf192ee2f35 h1:FZ1pPePdkWFmf884wtT2Q5veUKW6J2PO9eyvBdCtjuA=
+github.com/x-way/iptables-tracer v0.0.0-20190916233523-fbf192ee2f35/go.mod h1:scbbO4ZndoSFypmDHgEPnc9nR7NJodoBiMPGlKKdP8A=
 github.com/x-way/pktdump v0.0.1 h1:8Wi9pVNWD3yJ05kGfcu8ZcaRXVM/uvmLqQZoCYtapQo=
 github.com/x-way/pktdump v0.0.1/go.mod h1:b/qdAmn2Me9St19KgbNJ8K7EaK7W1oSCqp8rvb6OVKc=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
