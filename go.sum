@@ -86,6 +86,8 @@ github.com/x-way/iptables-tracer v0.0.0-20190929213407-642d9d11b9e0 h1:H36j3GPTj
 github.com/x-way/iptables-tracer v0.0.0-20190929213407-642d9d11b9e0/go.mod h1:fG/RESScNk5Qb5z+yaIPk42YGwLLMHrYFKvH/Ujwcro=
 github.com/x-way/iptables-tracer v0.0.0-20191006065529-dd2c6c342bca h1:niS6/Jqx9PlSY0poVHhxYOpo6oqV5RHIjAaZsUeEsNM=
 github.com/x-way/iptables-tracer v0.0.0-20191006065529-dd2c6c342bca/go.mod h1:P65+Akk5V0iB8KFetqWQX+IJNfGb7oBM2PRepmer3Do=
+github.com/x-way/iptables-tracer v0.0.0-20191012221728-c2dedc2b6759 h1:24e3dt/1mIYV0aifYoP5aIaZYzmNhLcAnjll8qkMdMQ=
+github.com/x-way/iptables-tracer v0.0.0-20191012221728-c2dedc2b6759/go.mod h1:oiw0ctPGNJfSZyVWOntCcr+KjC4I35kO3jTAoK8itGw=
 github.com/x-way/pktdump v0.0.1 h1:8Wi9pVNWD3yJ05kGfcu8ZcaRXVM/uvmLqQZoCYtapQo=
 github.com/x-way/pktdump v0.0.1/go.mod h1:b/qdAmn2Me9St19KgbNJ8K7EaK7W1oSCqp8rvb6OVKc=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
@@ -123,6 +125,7 @@ golang.org/x/sys v0.0.0-20190927073244-c990c680b611 h1:q9u40nxWT5zRClI/uU9dHCiYG
 golang.org/x/sys v0.0.0-20190927073244-c990c680b611/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20191005200804-aed5e4c7ecf9 h1:L2auWcuQIvxz9xSEqzESnV/QN/gNRXNApHi3fYwl2w0=
 golang.org/x/sys v0.0.0-20191005200804-aed5e4c7ecf9/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20191010194322-b09406accb47/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 gopkg.in/alecthomas/kingpin.v2 v2.2.6/go.mod h1:FMv+mEhP44yOT+4EoQTLFTRgOQ1FBLkstjWtayDeSgw=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
