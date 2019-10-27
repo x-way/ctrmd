@@ -107,6 +107,8 @@ github.com/x-way/iptables-tracer v0.0.0-20191012221728-c2dedc2b6759 h1:24e3dt/1m
 github.com/x-way/iptables-tracer v0.0.0-20191012221728-c2dedc2b6759/go.mod h1:oiw0ctPGNJfSZyVWOntCcr+KjC4I35kO3jTAoK8itGw=
 github.com/x-way/iptables-tracer v0.0.0-20191019214752-4f2685d6c3e9 h1:mHFn6P6cKe57WzRPfbb5DOMRxuYXPuTdSyXnH/lvYBI=
 github.com/x-way/iptables-tracer v0.0.0-20191019214752-4f2685d6c3e9/go.mod h1:rv88C39edHA9LzvWBLgigd1q8sWdQaCPqsrrsdvKEMQ=
+github.com/x-way/iptables-tracer v0.0.0-20191027013303-ca76056ce214 h1:gIaNrwZOW471bBII+6iMsUE09VXw+Xz58m5TxWUO2Mo=
+github.com/x-way/iptables-tracer v0.0.0-20191027013303-ca76056ce214/go.mod h1:Df1YSM81lcPFiEKqhAhh55c2hA8K+MAjuMTF34m4mAQ=
 github.com/x-way/pktdump v0.0.1 h1:8Wi9pVNWD3yJ05kGfcu8ZcaRXVM/uvmLqQZoCYtapQo=
 github.com/x-way/pktdump v0.0.1/go.mod h1:b/qdAmn2Me9St19KgbNJ8K7EaK7W1oSCqp8rvb6OVKc=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
