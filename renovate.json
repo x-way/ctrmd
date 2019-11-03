@@ -2,12 +2,25 @@
   "extends": [
     "config:base"
   ],
-  "assignees": ["x-way"],
-  "reviewers": ["x-way"],
+  "assignees": [
+    "x-way"
+  ],
+  "labels": [
+    "renovate"
+  ],
+  "postUpdateOptions": [
+    "gomodTidy"
+  ],
   "packageRules": [
     {
-      "packageNames": ["golang.org/x/sys"],
-      "schedule": ["after 9pm on saturday"]
+      "packageNames": [
+        "golang.org/x/sys"
+      ],
+      "updateTypes": [
+        "digest",
+        "patch"
+      ],
+      "automerge": true
     }
   ]
 }
