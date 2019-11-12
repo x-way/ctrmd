@@ -5,6 +5,9 @@
   "assignees": [
     "x-way"
   ],
+  "reviewers": [
+    "x-way"
+  ],
   "labels": [
     "renovate"
   ],
@@ -13,14 +16,14 @@
   ],
   "packageRules": [
     {
-      "packageNames": [
-        "golang.org/x/sys"
-      ],
       "updateTypes": [
         "digest",
         "patch"
       ],
-      "automerge": true
+      "packagePatterns": [
+        "^golang.org/x/"
+      ],
+      "schedule": ["after 6pm"]
     }
   ]
 }
