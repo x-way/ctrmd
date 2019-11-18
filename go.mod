@@ -7,7 +7,7 @@ require (
 	github.com/florianl/go-nflog v0.0.0-20190401084518-8393abb58fd4
 	github.com/google/gopacket v1.1.17
 	github.com/prometheus/client_golang v1.2.1
-	github.com/x-way/iptables-tracer v0.0.0-20191115074206-7c1b8c9e404f
+	github.com/x-way/iptables-tracer v0.0.0-20191118085608-0a8dee8ac2eb
 	github.com/x-way/pktdump v0.0.1
-	golang.org/x/sys v0.0.0-20191118013547-6254a7c3cac6
+	golang.org/x/sys v0.0.0-20191118073850-2f86c98f3482
 )
