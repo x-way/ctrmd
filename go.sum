@@ -81,8 +81,8 @@ github.com/stretchr/objx v0.1.1/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
-github.com/x-way/iptables-tracer v0.0.0-20200128191923-58492fa8243c h1:eHeMdoJowQ8oIWVO9t1A2yqaaAQdH8SuZJ4Tkq5Onv0=
-github.com/x-way/iptables-tracer v0.0.0-20200128191923-58492fa8243c/go.mod h1:T52nAlfue1x9cph79/ujOmK7uvb2JfnaFAaX4APyQ08=
+github.com/x-way/iptables-tracer v0.0.0-20200206225315-d7abde0d90b1 h1:QZ9qCREoRttP7Wnspckd57kUykJY+ZZ2GorAYjtHYMg=
+github.com/x-way/iptables-tracer v0.0.0-20200206225315-d7abde0d90b1/go.mod h1:aBvcKcQhvlPLbCH35Crl4hG6F+9cvjeqNRnYIggUzis=
 github.com/x-way/pktdump v0.0.1 h1:8Wi9pVNWD3yJ05kGfcu8ZcaRXVM/uvmLqQZoCYtapQo=
 github.com/x-way/pktdump v0.0.1/go.mod h1:b/qdAmn2Me9St19KgbNJ8K7EaK7W1oSCqp8rvb6OVKc=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
@@ -107,8 +107,6 @@ golang.org/x/sys v0.0.0-20190415081028-16da32be82c5 h1:UMbOtg4ZL2GyTAolLE9QfNvzs
 golang.org/x/sys v0.0.0-20190415081028-16da32be82c5/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20190422165155-953cdadca894/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200122134326-e047566fdf82/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
-golang.org/x/sys v0.0.0-20200124204421-9fbb57f87de9 h1:1/DFK4b7JH8DmkqhUk48onnSfrPzImPoVxuomtbT2nk=
-golang.org/x/sys v0.0.0-20200124204421-9fbb57f87de9/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200202164722-d101bd2416d5 h1:LfCXLvNmTYH9kEmVgqbnsWfruoXZIrh4YBgqVHtDvw0=
 golang.org/x/sys v0.0.0-20200202164722-d101bd2416d5/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
