@@ -31,6 +31,8 @@
       "packageNames": [
         "github.com/x-way/iptables-tracer"
       ],
+      "reviewers": [],
+      "assignees": [],
       "automerge": true
     }
   ]
