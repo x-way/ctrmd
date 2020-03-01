@@ -23,7 +23,15 @@
       "packagePatterns": [
         "^golang.org/x/"
       ],
-      "schedule": ["after 6pm"]
+      "schedule": [
+        "after 6pm"
+      ]
+    },
+    {
+      "packageNames": [
+        "github.com/x-way/iptables-tracer"
+      ],
+      "automerge": true
     }
   ]
 }
