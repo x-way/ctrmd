@@ -29,7 +29,12 @@
     },
     {
       "packageNames": [
-        "github.com/x-way/iptables-tracer"
+        "github.com/x-way/iptables-tracer",
+        "golang.org/x/sys"
+      ],
+      "updateTypes": [
+        "digest",
+        "patch"
       ],
       "reviewers": [],
       "assignees": [],
