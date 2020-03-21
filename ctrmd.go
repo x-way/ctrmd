@@ -147,7 +147,7 @@ func main() {
 				familyStr, protoStr = familyProto(ctFamily, attrs)
 			}
 		} else {
-			logger.Warning(fmt.Sprintf("No NFLOG payload found, ignoring packet\n"))
+			logger.Warning("No NFLOG payload found, ignoring packet\n")
 			if *debug {
 				fmt.Println("No NFLOG payload found, ignoring packet")
 			}
@@ -155,7 +155,7 @@ func main() {
 			return 0
 		}
 
-		var ctInfo = ^uint32(0)
+		ctInfo := ^uint32(0)
 		if mark, found := m[nflog.AttrMark]; found {
 			fwMark = mark.(uint32)
 		}
@@ -190,7 +190,7 @@ func main() {
 				deleteCounter.WithLabelValues(familyStr, protoStr, ctinfoStr).Inc()
 			}
 		} else {
-			logger.Warning(fmt.Sprintf("List of extracted CT attributes is empty, ignoring packet\n"))
+			logger.Warning("List of extracted CT attributes is empty, ignoring packet\n")
 			if *debug {
 				fmt.Println("List of extracted CT attributes is empty, ignoring packet")
 			}
