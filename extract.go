@@ -66,7 +66,7 @@ func extractCtAttrsFromCt(data []byte) (family conntrack.CtFamily, attrs []connt
 	if data, ok := conn[conntrack.AttrOrigL3Proto]; ok {
 		family = conntrack.CtFamily(data[0])
 	} else {
-		err = fmt.Errorf("Error decoding CT attributes from NFLOG, no AttrOrigL3Proto found")
+		err = fmt.Errorf("error decoding CT attributes from NFLOG, no AttrOrigL3Proto found")
 		return
 	}
 
@@ -79,7 +79,7 @@ func extractCtAttrsFromCt(data []byte) (family conntrack.CtFamily, attrs []connt
 		if data, ok := conn[attr]; ok {
 			attrs = append(attrs, conntrack.ConnAttr{Type: attr, Data: data})
 		} else {
-			err = fmt.Errorf("Error decoding CT attributes from NFLOG, mandatory attribute 0x%x not found", attr)
+			err = fmt.Errorf("error decoding CT attributes from NFLOG, mandatory attribute 0x%x not found", attr)
 			return
 		}
 	}
@@ -105,7 +105,7 @@ func extractCtAttrsFromCt(data []byte) (family conntrack.CtFamily, attrs []connt
 }
 
 func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []conntrack.ConnAttr, err error) {
-	var version = (data)[0] >> 4
+	version := (data)[0] >> 4
 	if version == 4 {
 		family = conntrack.CtIPv4
 
@@ -120,7 +120,7 @@ func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []
 			icmpCode := typeCode.Code()
 
 			if icmpType != 8 && icmpCode != 0 {
-				err = fmt.Errorf("Ignoring non-echo-request ICMP packets")
+				err = fmt.Errorf("ignoring non-echo-request ICMP packets")
 				return
 			}
 
@@ -146,7 +146,7 @@ func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []
 			return
 		}
 
-		err = fmt.Errorf("Could not decode IPv4 packet")
+		err = fmt.Errorf("could not decode IPv4 packet")
 	} else if version == 6 {
 		family = conntrack.CtIPv6
 
@@ -161,7 +161,7 @@ func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []
 			icmpCode := typeCode.Code()
 
 			if icmpType != 128 && icmpCode != 0 {
-				err = fmt.Errorf("Ignoring non-echo-request ICMPv6 packets")
+				err = fmt.Errorf("ignoring non-echo-request ICMPv6 packets")
 				return
 			}
 
@@ -179,7 +179,7 @@ func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []
 				}...)
 				return
 			}
-			err = fmt.Errorf("Could not decode ICMPv6 packet")
+			err = fmt.Errorf("could not decode ICMPv6 packet")
 			return
 		}
 		if udpLayer := pkt.Layer(layers.LayerTypeUDP); udpLayer != nil {
@@ -193,9 +193,9 @@ func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []
 			return
 		}
 
-		err = fmt.Errorf("Could not decode IPv6 packet")
+		err = fmt.Errorf("could not decode IPv6 packet")
 	} else {
-		err = fmt.Errorf("Could not decode packet (non-IPv4/IPv6)")
+		err = fmt.Errorf("could not decode packet (non-IPv4/IPv6)")
 	}
 	return
 }
