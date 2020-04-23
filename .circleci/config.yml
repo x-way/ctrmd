@@ -49,6 +49,11 @@ jobs:
                     gofumports -d .
                     [ -z "$(gofumports -l .)" ]
       - run:
+          name: Install CodeClimate test-reporter
+          command: |
+                    go get github.com/codeclimate/test-reporter
+                    test-reporter before-build
+      - run:
           name: Run go tests
           environment:
             GOTESTSUM_JUNITFILE: /tmp/test-reports/gotests/junit.xml
@@ -71,6 +76,11 @@ jobs:
           command: |
                     go get github.com/schrej/godacov
                     godacov -t $CODACY_PROJECT_TOKEN -r coverage.txt -c $CIRCLE_SHA1
+      - run:
+          name: CodeClimate coverage upload
+          command: |
+                    cp coverage.txt c.out
+                    test-reporter after-build
       - store_test_results:
           path: /tmp/test-reports
       - store_artifacts:
