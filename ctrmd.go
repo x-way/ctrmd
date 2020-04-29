@@ -222,7 +222,7 @@ func formatPkt(ctFamily conntrack.CtFamily, ts time.Time, fwMark uint32, iif, oi
 	return output
 }
 
-func familyProto(ctFamily conntrack.CtFamily, attrs []conntrack.ConnAttr) (family string, proto string) {
+func familyProto(ctFamily conntrack.CtFamily, attrs []conntrack.ConnAttr) (family, proto string) {
 	if ctFamily == unix.AF_INET {
 		family = "inet"
 	} else {
