@@ -56,24 +56,11 @@ func main() {
 	}
 	flag.Parse()
 
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
 	if *metricsSocket != "" {
-		logger.Info(fmt.Sprintf("Opening metrics socket %s", *metricsSocket))
-		if *debug {
-			fmt.Printf("Opening metrics socket %s\n", *metricsSocket)
-		}
-		unixListener, err := net.Listen("unix", *metricsSocket)
-		if err != nil {
-			log.Fatal("Could not create metrics socket: ", err)
-		}
-		defer unixListener.Close()
-		metricsServer := &http.Server{
-			Handler: promhttp.Handler(),
-		}
-		go func() {
-			if err := metricsServer.Serve(unixListener); err != nil {
-				log.Fatal("Metrics server failed: ", err)
-			}
-		}()
+		startMetricsServer(ctx, logger, *metricsSocket)
 	}
 
 	logger.Info("Opening conntrack socket")
@@ -82,9 +69,6 @@ func main() {
 		log.Fatal(logger.Err(fmt.Sprintf("Could not open conntrack socket: %v\n", err)))
 	}
 	defer nfct.Close()
-
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
 
 	config := nflog.Config{
 		Group:       uint16(*nflogGroup),
@@ -245,4 +229,33 @@ func GetIfaceName(index uint32) string {
 		return ""
 	}
 	return iface.Name
+}
+
+func startMetricsServer(ctx context.Context, logger *syslog.Writer, socket string) {
+	logger.Info(fmt.Sprintf("Opening metrics socket %s", socket))
+	if *debug {
+		fmt.Printf("Opening metrics socket %s\n", socket)
+	}
+	unixListener, err := net.Listen("unix", socket)
+	if err != nil {
+		logger.Err(fmt.Sprintf("Could not create metrics socket: %s", err))
+		return
+	}
+	defer unixListener.Close()
+	metricsServer := &http.Server{
+		Handler: promhttp.Handler(),
+	}
+	go func() {
+		if err := metricsServer.Serve(unixListener); err != nil && err != http.ErrServerClosed {
+			logger.Err(fmt.Sprintf("Metrics server failed: %s", err))
+		}
+	}()
+	go func() {
+		<-ctx.Done()
+		shutdownCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		defer cancel()
+		if err := metricsServer.Shutdown(shutdownCtx); err != nil {
+			logger.Err(fmt.Sprintf("Could not gracefully shutdown the metrics server: %s", err))
+		}
+	}()
 }
