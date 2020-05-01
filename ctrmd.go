@@ -192,7 +192,7 @@ func main() {
 	logger.Info("Terminating")
 }
 
-func formatPkt(ctFamily conntrack.CtFamily, ts time.Time, fwMark uint32, iif, oif string, payload []byte, ct []byte, ctInfo uint32) string {
+func formatPkt(ctFamily conntrack.CtFamily, ts time.Time, fwMark uint32, iif, oif string, payload, ct []byte, ctInfo uint32) string {
 	var output string
 	packetStr := ""
 	if ctFamily == unix.AF_INET {
