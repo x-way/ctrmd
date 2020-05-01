@@ -241,7 +241,6 @@ func startMetricsServer(ctx context.Context, logger *syslog.Writer, socket strin
 		logger.Err(fmt.Sprintf("Could not create metrics socket: %s", err))
 		return
 	}
-	defer unixListener.Close()
 	metricsServer := &http.Server{
 		Handler: promhttp.Handler(),
 	}
@@ -249,6 +248,7 @@ func startMetricsServer(ctx context.Context, logger *syslog.Writer, socket strin
 		if err := metricsServer.Serve(unixListener); err != nil && err != http.ErrServerClosed {
 			logger.Err(fmt.Sprintf("Metrics server failed: %s", err))
 		}
+		unixListener.Close()
 	}()
 	go func() {
 		<-ctx.Done()
