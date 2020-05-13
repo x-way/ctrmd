@@ -88,6 +88,7 @@ github.com/stretchr/objx v0.1.1/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/x-way/iptables-tracer v0.0.0-20200512001802-ab3987a64e34 h1:hB+qDCjL0AelaO4GXy4ZiXzRZeMQik+fdgFHNlQmWX4=
 github.com/x-way/iptables-tracer v0.0.0-20200512001802-ab3987a64e34/go.mod h1:ay/cetrj8DIJQ6t28DkzmKe2TYTWge0EvCBVhKNvFYM=
 github.com/x-way/pktdump v0.0.1 h1:8Wi9pVNWD3yJ05kGfcu8ZcaRXVM/uvmLqQZoCYtapQo=
 github.com/x-way/pktdump v0.0.1/go.mod h1:b/qdAmn2Me9St19KgbNJ8K7EaK7W1oSCqp8rvb6OVKc=
@@ -116,6 +117,8 @@ golang.org/x/sys v0.0.0-20200106162015-b016eb3dc98e/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20200420163511-1957bb5e6d1f/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200511232937-7e40ca221e25 h1:OKbAoGs4fGM5cPLlVQLZGYkFC8OnOfgo6tt0Smf9XhM=
 golang.org/x/sys v0.0.0-20200511232937-7e40ca221e25/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200513112337-417ce2331b5c h1:kISX68E8gSkNYAFRFiDU8rl5RIn1sJYKYb/r2vMLDrU=
+golang.org/x/sys v0.0.0-20200513112337-417ce2331b5c/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
