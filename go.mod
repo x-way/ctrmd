@@ -9,5 +9,5 @@ require (
 	github.com/prometheus/client_golang v1.6.0
 	github.com/x-way/iptables-tracer v0.0.0-20200513195117-9761fb9edf1e
 	github.com/x-way/pktdump v0.0.1
-	golang.org/x/sys v0.0.0-20200513112337-417ce2331b5c
+	golang.org/x/sys v0.0.0-20200515095857-1151b9dac4a9
 )
