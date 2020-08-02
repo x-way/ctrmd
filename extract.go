@@ -32,28 +32,16 @@ func addIPv4IPs(pkt gopacket.Packet) (attrs []conntrack.ConnAttr) {
 	return
 }
 
-func addUDP(udp *layers.UDP) []conntrack.ConnAttr {
+func addL4Ports(attrs []conntrack.ConnAttr, srcPort, dstPort uint16, proto byte) []conntrack.ConnAttr {
 	srcBytes := make([]byte, 2)
-	binary.BigEndian.PutUint16(srcBytes, uint16(udp.SrcPort))
+	binary.BigEndian.PutUint16(srcBytes, srcPort)
 	dstBytes := make([]byte, 2)
-	binary.BigEndian.PutUint16(dstBytes, uint16(udp.DstPort))
-	return []conntrack.ConnAttr{
-		{Type: conntrack.AttrOrigL4Proto, Data: []byte{17}},
+	binary.BigEndian.PutUint16(dstBytes, dstPort)
+	return append(attrs, []conntrack.ConnAttr{
+		{Type: conntrack.AttrOrigL4Proto, Data: []byte{proto}},
 		{Type: conntrack.AttrOrigPortSrc, Data: srcBytes},
 		{Type: conntrack.AttrOrigPortDst, Data: dstBytes},
-	}
-}
-
-func addTCP(tcp *layers.TCP) []conntrack.ConnAttr {
-	srcBytes := make([]byte, 2)
-	binary.BigEndian.PutUint16(srcBytes, uint16(tcp.SrcPort))
-	dstBytes := make([]byte, 2)
-	binary.BigEndian.PutUint16(dstBytes, uint16(tcp.DstPort))
-	return []conntrack.ConnAttr{
-		{Type: conntrack.AttrOrigL4Proto, Data: []byte{6}},
-		{Type: conntrack.AttrOrigPortSrc, Data: srcBytes},
-		{Type: conntrack.AttrOrigPortDst, Data: dstBytes},
-	}
+	}...)
 }
 
 func extractCtAttrsFromCt(data []byte) (family conntrack.CtFamily, attrs []conntrack.ConnAttr, err error) {
@@ -137,12 +125,12 @@ func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []
 		}
 		if udpLayer := pkt.Layer(layers.LayerTypeUDP); udpLayer != nil {
 			udp, _ := udpLayer.(*layers.UDP)
-			attrs = append(attrs, addUDP(udp)...)
+			attrs = addL4Ports(attrs, uint16(udp.SrcPort), uint16(udp.DstPort), 17)
 			return
 		}
 		if tcpLayer := pkt.Layer(layers.LayerTypeTCP); tcpLayer != nil {
 			tcp, _ := tcpLayer.(*layers.TCP)
-			attrs = append(attrs, addTCP(tcp)...)
+			attrs = addL4Ports(attrs, uint16(tcp.SrcPort), uint16(tcp.DstPort), 6)
 			return
 		}
 
@@ -184,12 +172,12 @@ func extractCtAttrsFromPayload(data []byte) (family conntrack.CtFamily, attrs []
 		}
 		if udpLayer := pkt.Layer(layers.LayerTypeUDP); udpLayer != nil {
 			udp, _ := udpLayer.(*layers.UDP)
-			attrs = append(attrs, addUDP(udp)...)
+			attrs = addL4Ports(attrs, uint16(udp.SrcPort), uint16(udp.DstPort), 17)
 			return
 		}
 		if tcpLayer := pkt.Layer(layers.LayerTypeTCP); tcpLayer != nil {
 			tcp, _ := tcpLayer.(*layers.TCP)
-			attrs = append(attrs, addTCP(tcp)...)
+			attrs = addL4Ports(attrs, uint16(tcp.SrcPort), uint16(tcp.DstPort), 6)
 			return
 		}
 
