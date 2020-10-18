@@ -11,7 +11,7 @@ import (
 	"time"
 
 	conntrack "github.com/florianl/go-conntrack"
-	nflog "github.com/florianl/go-nflog"
+	nflog "github.com/florianl/go-nflog/v2"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/prometheus/client_golang/prometheus"
@@ -72,8 +72,8 @@ func main() {
 
 	config := nflog.Config{
 		Group:       uint16(*nflogGroup),
-		Copymode:    nflog.NfUlnlCopyPacket,
-		Flags:       nflog.NfUlnlCfgFConntrack,
+		Copymode:    nflog.CopyPacket,
+		Flags:       nflog.FlagConntrack,
 		ReadTimeout: 30 * time.Second,
 	}
 	logger.Info(fmt.Sprintf("Opening NFLOG socket for group %d", *nflogGroup))
@@ -86,23 +86,20 @@ func main() {
 	}
 	defer nfl.Close()
 
-	fn := func(m nflog.Msg) int {
+	fn := func(m nflog.Attribute) int {
 		var ctFamily conntrack.CtFamily
 		var attrs []conntrack.ConnAttr
 		var err error
-		var ct interface{}
-		var payload interface{}
 		var ctBytes []byte
 		var payloadBytes []byte
-		var ok bool
 		var fwMark uint32
 		var iif string
 		var oif string
 		familyStr := "unknown"
 		protoStr := "0"
 		ctinfoStr := "0x0"
-		if ct, ok = m[nflog.AttrCt]; ok {
-			ctBytes = ct.([]byte)
+		if m.Ct != nil {
+			ctBytes = *m.Ct
 			if ctFamily, attrs, err = extractCtAttrsFromCt(ctBytes); err != nil {
 				logger.Warning(fmt.Sprintf("Could not extract CT attrs from CT info: %v\n", err))
 				if *debug {
@@ -117,8 +114,8 @@ func main() {
 				fmt.Println("No NFLOG CT info found, decoding information from payload")
 			}
 		}
-		if payload, ok = m[nflog.AttrPayload]; ok {
-			payloadBytes = payload.([]byte)
+		if m.Payload != nil {
+			payloadBytes = *m.Payload
 			if len(attrs) == 0 {
 				if ctFamily, attrs, err = extractCtAttrsFromPayload(payloadBytes); err != nil {
 					logger.Warning(fmt.Sprintf("Could not extract CT attrs from packet payload: %v\n", err))
@@ -140,20 +137,17 @@ func main() {
 		}
 
 		ctInfo := ^uint32(0)
-		if mark, found := m[nflog.AttrMark]; found {
-			fwMark = mark.(uint32)
+		if m.Mark != nil {
+			fwMark = *m.Mark
 		}
-		if iifIx, found := m[nflog.AttrIfindexIndev]; found {
-			iif = GetIfaceName(iifIx.(uint32))
+		if m.InDev != nil {
+			iif = GetIfaceName(*m.InDev)
 		}
-		if oifIx, found := m[nflog.AttrIfindexOutdev]; found {
-			oif = GetIfaceName(oifIx.(uint32))
+		if m.OutDev != nil {
+			oif = GetIfaceName(*m.OutDev)
 		}
-		if ct, found := m[nflog.AttrCt]; found {
-			ctBytes = ct.([]byte)
-		}
-		if cti, found := m[nflog.AttrCtInfo]; found {
-			ctInfo = cti.(uint32)
+		if m.CtInfo != nil {
+			ctInfo = *m.CtInfo
 			ctinfoStr = fmt.Sprintf("0x%x", ctInfo)
 		}
 		if len(attrs) > 0 {
