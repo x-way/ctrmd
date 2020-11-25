@@ -96,8 +96,8 @@ github.com/google/go-cmp v0.3.1/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMyw
 github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.2 h1:X2ev0eStA3AbceY54o37/0PQ/UWqKEiiO2dKL5OPaFM=
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
-github.com/google/go-cmp v0.5.3 h1:x95R7cp+rSeeqAMI2knLtQ0DKlaBhv2NrtrOvafPHRo=
-github.com/google/go-cmp v0.5.3/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
+github.com/google/go-cmp v0.5.4 h1:L8R9j+yAqZuZjsqh/z+F1NCffTKKLShY6zXTItVIZ8M=
+github.com/google/go-cmp v0.5.4/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=
 github.com/google/gopacket v1.1.18-0.20191009163724-0ad7f2610e34/go.mod h1:UdDNZ1OO62aGYVnPhxT1U6aI7ukYtA/kB8vaU0diBUM=
 github.com/google/gopacket v1.1.19 h1:ves8RnFZPGiFnTS0uPQStjwru6uO6h+nlr9j6fL7kF8=
@@ -273,8 +273,8 @@ github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81P
 github.com/tmc/grpc-websocket-proxy v0.0.0-20170815181823-89b8d40f7ca8/go.mod h1:ncp9v5uamzpCO7NfCPTXjqaC+bZgJeR0sMTm6dMHP7U=
 github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijbERA=
 github.com/urfave/cli v1.22.1/go.mod h1:Gos4lmkARVdJ6EkW0WaNv/tZAAMe9V7XWyB60NtXRu0=
-github.com/x-way/iptables-tracer v0.0.0-20201113100123-1de9c74724d0 h1:uNH+KUwIi5KftZlp7kTAixPF17xO0MGlTTmtuHBh4jo=
-github.com/x-way/iptables-tracer v0.0.0-20201113100123-1de9c74724d0/go.mod h1:Jcni2EPG84nghYwrPZKcQkOUJNpJpB7IsqPtYCV1+Cw=
+github.com/x-way/iptables-tracer v0.0.0-20201125164937-fc1353e1184a h1:qALJyqKKzIKmLW3uNUmBzyOpyu8BBraV6g7DbvJo/ck=
+github.com/x-way/iptables-tracer v0.0.0-20201125164937-fc1353e1184a/go.mod h1:PCQD5+cGukYj+yDwKxT6zcWb5FYil5Y1AGvYs38fCXE=
 github.com/x-way/pktdump v0.0.2 h1:N59Xa2E9OYk591tztOq7S8PMKYymtKjEza+tNyUCaho=
 github.com/x-way/pktdump v0.0.2/go.mod h1:l+hMYAt3p7Lt77cTPrAljhh/XcbsS9Je8kzzk2Tci9U=
 github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2/go.mod h1:UETIi67q53MR2AWcXfiuqkDkRtnGDLqkBTpCHuJHxtU=
