@@ -273,8 +273,8 @@ github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81P
 github.com/tmc/grpc-websocket-proxy v0.0.0-20170815181823-89b8d40f7ca8/go.mod h1:ncp9v5uamzpCO7NfCPTXjqaC+bZgJeR0sMTm6dMHP7U=
 github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijbERA=
 github.com/urfave/cli v1.22.1/go.mod h1:Gos4lmkARVdJ6EkW0WaNv/tZAAMe9V7XWyB60NtXRu0=
-github.com/x-way/iptables-tracer v0.0.0-20210108225754-8ecdbbaa2e4c h1:xpxj+kBAsGW6ckFAmmE/+Mc8isLx4m+XI089cKD0NRM=
-github.com/x-way/iptables-tracer v0.0.0-20210108225754-8ecdbbaa2e4c/go.mod h1:PCQD5+cGukYj+yDwKxT6zcWb5FYil5Y1AGvYs38fCXE=
+github.com/x-way/iptables-tracer v0.0.0-20210220070133-b3f12d1425b2 h1:xWYC9wi4YgVL4q9a/AwhH5D9GrCbhAPw5nk+VlJbUx4=
+github.com/x-way/iptables-tracer v0.0.0-20210220070133-b3f12d1425b2/go.mod h1:PCQD5+cGukYj+yDwKxT6zcWb5FYil5Y1AGvYs38fCXE=
 github.com/x-way/pktdump v0.0.2 h1:N59Xa2E9OYk591tztOq7S8PMKYymtKjEza+tNyUCaho=
 github.com/x-way/pktdump v0.0.2/go.mod h1:l+hMYAt3p7Lt77cTPrAljhh/XcbsS9Je8kzzk2Tci9U=
 github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2/go.mod h1:UETIi67q53MR2AWcXfiuqkDkRtnGDLqkBTpCHuJHxtU=
