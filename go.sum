@@ -41,8 +41,9 @@ github.com/google/go-cmp v0.3.1/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMyw
 github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.4/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
-github.com/google/go-cmp v0.5.5 h1:Khx7svrCpmxxtHBq5j2mp/xVjsi8hQMfNLvJFAlrGgU=
 github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
+github.com/google/go-cmp v0.5.6 h1:BKbKCqvP6I+rmFHt06ZmyQtvB8xAkWdhFyr0ZUNZcxQ=
+github.com/google/go-cmp v0.5.6/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=
 github.com/google/gopacket v1.1.18-0.20191009163724-0ad7f2610e34/go.mod h1:UdDNZ1OO62aGYVnPhxT1U6aI7ukYtA/kB8vaU0diBUM=
 github.com/google/gopacket v1.1.19 h1:ves8RnFZPGiFnTS0uPQStjwru6uO6h+nlr9j6fL7kF8=
@@ -104,8 +105,8 @@ github.com/stretchr/objx v0.1.1/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
-github.com/x-way/iptables-tracer v0.0.0-20210304210536-dabba73c9f99 h1:pCP/a0sLm1ibjvajTkrgjYrH7x2qeK3ZJ1c32hHpIME=
-github.com/x-way/iptables-tracer v0.0.0-20210304210536-dabba73c9f99/go.mod h1:pUfV9DyC87GHrFtBn2CIUmhzSVCXvYqlFpL30Ih/5n8=
+github.com/x-way/iptables-tracer v0.0.0-20210607193043-8b13850c135b h1:nQ1jTmBkpO2U6IJUzAYmf69ya8v2OFZF2JOt6DvTFSE=
+github.com/x-way/iptables-tracer v0.0.0-20210607193043-8b13850c135b/go.mod h1:SPyO33Fgp+BuLrbXnVr7xbved9Z4Yp5BUIz3dLoSgBw=
 github.com/x-way/pktdump v0.0.2 h1:N59Xa2E9OYk591tztOq7S8PMKYymtKjEza+tNyUCaho=
 github.com/x-way/pktdump v0.0.2/go.mod h1:l+hMYAt3p7Lt77cTPrAljhh/XcbsS9Je8kzzk2Tci9U=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
