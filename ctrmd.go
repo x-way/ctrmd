@@ -15,6 +15,7 @@ import (
 	nflog "github.com/florianl/go-nflog/v2"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
+	"github.com/mdlayher/netlink"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	ctprint "github.com/x-way/iptables-tracer/pkg/ctprint"
@@ -177,8 +178,17 @@ func main() {
 
 		return 0
 	}
+	errorFn := func(err error) int {
+		if opError, ok := err.(*netlink.OpError); ok {
+			if opError.Timeout() || opError.Temporary() {
+				return 0
+			}
+		}
+		logger.Printf("Could not receive message: %v\n", err)
+		return 1
+	}
 	logger.Print("Registering nflog callback")
-	if err := nfl.Register(ctx, fn); err != nil {
+	if err := nfl.RegisterWithErrorFunc(ctx, fn, errorFn); err != nil {
 		logger.Fatalf("Could not register nflog callback: %v", err)
 	}
 
