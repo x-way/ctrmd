@@ -17,8 +17,9 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/florianl/go-conntrack v0.2.1-0.20210306083143-59e800ab9734/go.mod h1:I3tcaA9q2NhG4PGGRlL40Y6pEBIRLEC0xz1QjHx84+w=
 github.com/florianl/go-conntrack v0.3.0 h1:DUY84Mce+/lE9dJi2EWvGYacQtX2X96J9aVWV99l8UE=
 github.com/florianl/go-conntrack v0.3.0/go.mod h1:Q+Um4J/nWUXSbnyzQRMOP4eweSeEQ2G8sfCO5gMz6Pw=
-github.com/florianl/go-nflog/v2 v2.0.1-0.20210227082804-4fecbe25c137 h1:BGdccNkmsK856Itx0ANQg2PhMWZElH9DTl82bM+3f/I=
 github.com/florianl/go-nflog/v2 v2.0.1-0.20210227082804-4fecbe25c137/go.mod h1:yViECCzGYmg0O92pcrsNid5v6tkmZVMwPAOxlYG2Wrc=
+github.com/florianl/go-nflog/v2 v2.0.1 h1:8csWIqFQ2vDaZJkxezY3dXDB7bEFg0VRFsYd2Bzj3II=
+github.com/florianl/go-nflog/v2 v2.0.1/go.mod h1:g+SOgM/SuePn9bvS/eo3Ild7J71nSb29OzbxR+7cln0=
 github.com/frankban/quicktest v1.11.3 h1:8sXhOn0uLys67V8EsXLc6eszDs8VXWxL3iRvebPhedY=
 github.com/frankban/quicktest v1.11.3/go.mod h1:wRf/ReqHper53s+kmmSZizM8NamnL3IM0I9ntUbOk+k=
 github.com/go-kit/kit v0.8.0/go.mod h1:xBxKIO96dXMWWy0MnWVtmwkA9/13aqxPnvrjFYMA2as=
