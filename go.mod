@@ -7,7 +7,7 @@ require (
 	github.com/florianl/go-nflog/v2 v2.0.1
 	github.com/google/gopacket v1.1.19
 	github.com/mdlayher/netlink v1.6.2
-	github.com/prometheus/client_golang v1.13.0
+	github.com/prometheus/client_golang v1.14.0
 	github.com/x-way/iptables-tracer v0.0.0-20221014032822-140dfbb82ed5
 	github.com/x-way/pktdump v0.0.3
 	golang.org/x/sys v0.0.0-20221013171732-95e765b1cc43
@@ -21,7 +21,7 @@ require (
 	github.com/josharian/native v1.0.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/mdlayher/socket v0.2.3 // indirect
-	github.com/prometheus/client_model v0.2.0 // indirect
+	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/common v0.37.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
 	golang.org/x/net v0.0.0-20220923203811-8be639271d50 // indirect
