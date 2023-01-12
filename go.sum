@@ -236,8 +236,9 @@ github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UV
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/x-way/iptables-tracer v0.0.0-20221014032822-140dfbb82ed5 h1:rt/gdq1/wR5aJoXbHU6VsXjpGpTPjU+Px2rM9Bob85k=
 github.com/x-way/iptables-tracer v0.0.0-20221014032822-140dfbb82ed5/go.mod h1:XkSnRlrngQwxXiON67u6UaYgtsjt5gajzOAel8WBscQ=
-github.com/x-way/pktdump v0.0.3 h1:1ba7pZdCdCD65qM+nyOj3NRQhOOf7rY07YmqFaaPpyg=
 github.com/x-way/pktdump v0.0.3/go.mod h1:dgkl7xLMuPX11phpuiSfw2vwT4/bTu5RwmH3L6iQIHw=
+github.com/x-way/pktdump v0.0.4 h1:HnGUYOiHWIorS6IwTHaBhbO1zXOgMGBgPnYqQEFIg/Y=
+github.com/x-way/pktdump v0.0.4/go.mod h1:5PAmSG6VCmUjVLp4GzLfrJcqtvMk4T7psSJUXzqvqyc=
 github.com/yuin/goldmark v1.1.25/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.32/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
