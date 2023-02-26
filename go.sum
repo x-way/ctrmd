@@ -238,8 +238,8 @@ github.com/stretchr/objx v0.1.1/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
-github.com/x-way/iptables-tracer v0.0.0-20230205164442-ce584750a81a h1:CsXEhbbElgExgJwWmXwyjn7HHYnHfgJNC1s6YSeNYiQ=
-github.com/x-way/iptables-tracer v0.0.0-20230205164442-ce584750a81a/go.mod h1:QeoJNpM+8zASEZHRrMyED1j+Y9oN9Spxp7NItrdpAQo=
+github.com/x-way/iptables-tracer v0.0.0-20230226111914-ee87ee231540 h1:Pm2y5VT3uKBdbdJ8Du0EyF0wiWv4G5pzRq/8QdzZeqQ=
+github.com/x-way/iptables-tracer v0.0.0-20230226111914-ee87ee231540/go.mod h1:E111b80f74+qgg1z0CRsXV9STKkwcN/Rt7g4PKOsOuE=
 github.com/x-way/pktdump v0.0.4 h1:HnGUYOiHWIorS6IwTHaBhbO1zXOgMGBgPnYqQEFIg/Y=
 github.com/x-way/pktdump v0.0.4/go.mod h1:5PAmSG6VCmUjVLp4GzLfrJcqtvMk4T7psSJUXzqvqyc=
 github.com/yuin/goldmark v1.1.25/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
