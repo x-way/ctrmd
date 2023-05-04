@@ -31,7 +31,10 @@
       "packageNames": [
         "github.com/x-way/iptables-tracer",
         "github.com/x-way/pktdump",
-        "golang.org/x/sys"
+        "golang.org/x/sys",
+        "github.com/prometheus/client_golang",
+        "github.com/mdlayher/netlink",
+        "github.com/google/gopacket"
       ],
       "updateTypes": [
         "digest",
