@@ -75,8 +75,8 @@ github.com/prometheus/common v0.42.0 h1:EKsfXEYo4JpWMHH5cg+KOUWeuJSov1Id8zGR8eeI
 github.com/prometheus/common v0.42.0/go.mod h1:xBwqVerjNdUDjgODMpudtOMwlOwf2SaTr1yjz4b7Zbc=
 github.com/prometheus/procfs v0.10.1 h1:kYK1Va/YMlutzCGazswoHKo//tZVlFpKYh+PymziUAg=
 github.com/prometheus/procfs v0.10.1/go.mod h1:nwNm2aOCAYw8uTR/9bWRREkZFxAUcWzPHWJq+XBB/FM=
-github.com/x-way/iptables-tracer v0.0.0-20230429223505-cc07b08a88b8 h1:ahRA4h8JDJBcoN2Hmlo/fY32MBqv3YJ8/8aMRnu2SrA=
-github.com/x-way/iptables-tracer v0.0.0-20230429223505-cc07b08a88b8/go.mod h1:EvF0jTRaWnE0uam3KpF+d30GT8H95XB8y7/zfQXHZ3s=
+github.com/x-way/iptables-tracer v0.0.0-20230903053339-24173ceb550a h1:4JDrbp5qCRfL2TQtuSGXufWaECSufLmpdg3XPoRX8Vc=
+github.com/x-way/iptables-tracer v0.0.0-20230903053339-24173ceb550a/go.mod h1:EvF0jTRaWnE0uam3KpF+d30GT8H95XB8y7/zfQXHZ3s=
 github.com/x-way/pktdump v0.0.4 h1:HnGUYOiHWIorS6IwTHaBhbO1zXOgMGBgPnYqQEFIg/Y=
 github.com/x-way/pktdump v0.0.4/go.mod h1:5PAmSG6VCmUjVLp4GzLfrJcqtvMk4T7psSJUXzqvqyc=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
