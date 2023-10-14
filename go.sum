@@ -74,10 +74,10 @@ github.com/prometheus/common v0.44.0 h1:+5BrQJwiBB9xsMygAB3TNvpQKOwlkc25LbISbrdO
 github.com/prometheus/common v0.44.0/go.mod h1:ofAIvZbQ1e/nugmZGz4/qCb9Ap1VoSTIO7x0VV9VvuY=
 github.com/prometheus/procfs v0.11.1 h1:xRC8Iq1yyca5ypa9n1EZnWZkt7dwcoRPQwX/5gwaUuI=
 github.com/prometheus/procfs v0.11.1/go.mod h1:eesXgaPo1q7lBpVMoMy0ZOFTth9hBn4W/y0/p/ScXhY=
-github.com/x-way/iptables-tracer v0.0.0-20231014055128-950673fb0715 h1:x/PqJnw+pgFw1nmHjKb9rKitF9sO/4QwPGDJgmXgZyE=
-github.com/x-way/iptables-tracer v0.0.0-20231014055128-950673fb0715/go.mod h1:Ikp0IamU1pmqgz3u7Y1mHQngzW72GuytE/R4Lj2qoEc=
-github.com/x-way/pktdump v0.0.4 h1:HnGUYOiHWIorS6IwTHaBhbO1zXOgMGBgPnYqQEFIg/Y=
-github.com/x-way/pktdump v0.0.4/go.mod h1:5PAmSG6VCmUjVLp4GzLfrJcqtvMk4T7psSJUXzqvqyc=
+github.com/x-way/iptables-tracer v0.0.0-20231014072701-aa5d01fcd639 h1:aYe7iZWahvubkk+7jrVWs0HGIUwlb4LKJRqCfxi2KtI=
+github.com/x-way/iptables-tracer v0.0.0-20231014072701-aa5d01fcd639/go.mod h1:g/DHdmDF/mvzgXBXhEf9b8o3qChOGsGSZp2lCy6BgF0=
+github.com/x-way/pktdump v0.0.5 h1:gzrVPqso0vUivD8sIYuUzjAOqVk65asF7cdb5KWxBsU=
+github.com/x-way/pktdump v0.0.5/go.mod h1:X35dlM7CqSkSKaB0FGQ/HSCEMoAGt6AqXvLvpq624dg=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.4.0/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
