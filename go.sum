@@ -24,8 +24,8 @@ github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/
 github.com/google/go-cmp v0.5.4/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.6/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
-github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
-github.com/google/go-cmp v0.5.9/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
+github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
+github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
 github.com/google/gopacket v1.1.19 h1:ves8RnFZPGiFnTS0uPQStjwru6uO6h+nlr9j6fL7kF8=
 github.com/google/gopacket v1.1.19/go.mod h1:iJ8V8n6KS+z2U1A8pUwu8bW5SyEMkXJB8Yo/Vo+TKTo=
 github.com/josharian/native v0.0.0-20200817173448-b6b71def0850/go.mod h1:7X/raswPFr05uY3HiLlYeyQntB6OO7E/d2Cu7qoaN2w=
@@ -74,8 +74,8 @@ github.com/prometheus/common v0.44.0 h1:+5BrQJwiBB9xsMygAB3TNvpQKOwlkc25LbISbrdO
 github.com/prometheus/common v0.44.0/go.mod h1:ofAIvZbQ1e/nugmZGz4/qCb9Ap1VoSTIO7x0VV9VvuY=
 github.com/prometheus/procfs v0.11.1 h1:xRC8Iq1yyca5ypa9n1EZnWZkt7dwcoRPQwX/5gwaUuI=
 github.com/prometheus/procfs v0.11.1/go.mod h1:eesXgaPo1q7lBpVMoMy0ZOFTth9hBn4W/y0/p/ScXhY=
-github.com/x-way/iptables-tracer v0.0.0-20230903053339-24173ceb550a h1:4JDrbp5qCRfL2TQtuSGXufWaECSufLmpdg3XPoRX8Vc=
-github.com/x-way/iptables-tracer v0.0.0-20230903053339-24173ceb550a/go.mod h1:EvF0jTRaWnE0uam3KpF+d30GT8H95XB8y7/zfQXHZ3s=
+github.com/x-way/iptables-tracer v0.0.0-20231014055128-950673fb0715 h1:x/PqJnw+pgFw1nmHjKb9rKitF9sO/4QwPGDJgmXgZyE=
+github.com/x-way/iptables-tracer v0.0.0-20231014055128-950673fb0715/go.mod h1:Ikp0IamU1pmqgz3u7Y1mHQngzW72GuytE/R4Lj2qoEc=
 github.com/x-way/pktdump v0.0.4 h1:HnGUYOiHWIorS6IwTHaBhbO1zXOgMGBgPnYqQEFIg/Y=
 github.com/x-way/pktdump v0.0.4/go.mod h1:5PAmSG6VCmUjVLp4GzLfrJcqtvMk4T7psSJUXzqvqyc=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=

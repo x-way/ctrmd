@@ -8,7 +8,7 @@ require (
 	github.com/google/gopacket v1.1.19
 	github.com/mdlayher/netlink v1.7.2
 	github.com/prometheus/client_golang v1.17.0
-	github.com/x-way/iptables-tracer v0.0.0-20230903053339-24173ceb550a
+	github.com/x-way/iptables-tracer v0.0.0-20231014055128-950673fb0715
 	github.com/x-way/pktdump v0.0.4
 	golang.org/x/sys v0.13.0
 )
@@ -17,7 +17,7 @@ require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
-	github.com/google/go-cmp v0.5.9 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/josharian/native v1.1.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/mdlayher/socket v0.4.1 // indirect
