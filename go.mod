@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/florianl/go-conntrack v0.4.0
-	github.com/florianl/go-nflog/v2 v2.0.1
+	github.com/florianl/go-nflog/v2 v2.1.0
 	github.com/google/gopacket v1.1.19
 	github.com/mdlayher/netlink v1.7.2
 	github.com/prometheus/client_golang v1.19.1
