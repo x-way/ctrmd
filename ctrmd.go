@@ -82,7 +82,6 @@ func main() {
 		Copymode:    nflog.CopyPacket,
 		Flags:       nflog.FlagConntrack,
 		ReadTimeout: 30 * time.Second,
-		Logger:      logger,
 	}
 	logger.Printf("Opening NFLOG socket for group %d", *nflogGroup)
 	nfl, err := nflog.Open(&config)
