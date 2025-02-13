@@ -1,6 +1,8 @@
 module github.com/x-way/ctrmd
 
-go 1.19
+go 1.21
+
+toolchain go1.24.0
 
 require (
 	github.com/florianl/go-conntrack v0.4.0
@@ -22,9 +24,9 @@ require (
 	github.com/mdlayher/socket v0.4.1 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
-	github.com/prometheus/common v0.55.0 // indirect
+	github.com/prometheus/common v0.62.0 // indirect
 	github.com/prometheus/procfs v0.15.1 // indirect
 	golang.org/x/net v0.33.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
-	google.golang.org/protobuf v1.34.2 // indirect
+	google.golang.org/protobuf v1.36.1 // indirect
 )
