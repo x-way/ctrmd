@@ -8,7 +8,7 @@ require (
 	github.com/google/gopacket v1.1.19
 	github.com/mdlayher/netlink v1.7.2
 	github.com/prometheus/client_golang v1.21.1
-	github.com/x-way/iptables-tracer v0.0.0-20250406230829-e258fd4619aa
+	github.com/x-way/iptables-tracer v0.0.0-20250407171225-7734753e4a7c
 	github.com/x-way/pktdump v0.0.6
 	golang.org/x/sys v0.32.0
 )
