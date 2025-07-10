@@ -56,7 +56,7 @@ github.com/prometheus/common/model
 github.com/prometheus/procfs
 github.com/prometheus/procfs/internal/fs
 github.com/prometheus/procfs/internal/util
-# github.com/x-way/iptables-tracer v0.0.0-20250607025707-1143610d3fbe
+# github.com/x-way/iptables-tracer v0.0.0-20250710004814-0bb075af91a6
 ## explicit; go 1.23.8
 github.com/x-way/iptables-tracer/pkg/ctprint
 # github.com/x-way/pktdump v0.0.6
