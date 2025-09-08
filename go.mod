@@ -1,6 +1,6 @@
 module github.com/x-way/ctrmd
 
-go 1.23.8
+go 1.24.6
 
 require (
 	github.com/florianl/go-conntrack v0.4.0
