@@ -36,7 +36,8 @@ func addL4Ports(con *conntrack.Con, srcPort, dstPort uint16, proto uint8) {
 	}
 }
 
-func extractConFromPayload(data []byte) (con conntrack.Con, err error) {
+func extractConFromPayload(data []byte) (conntrack.Con, error) {
+	var con conntrack.Con
 	version := (data)[0] >> 4
 	if version == 4 {
 		pkt := gopacket.NewPacket(data, layers.LayerTypeIPv4, gopacket.NoCopy)
@@ -49,8 +50,7 @@ func extractConFromPayload(data []byte) (con conntrack.Con, err error) {
 			icmpCode := typeCode.Code()
 
 			if icmpType != 8 || icmpCode != 0 {
-				err = fmt.Errorf("ignoring non-echo-request ICMP packets")
-				return
+				return nil, fmt.Errorf("ignoring non-echo-request ICMP packets")
 			}
 
 			var protoNumber uint8 = 1
@@ -61,20 +61,22 @@ func extractConFromPayload(data []byte) (con conntrack.Con, err error) {
 				IcmpID:   &icmp.Id,
 			}
 
-			return
+			return con, nil
 		}
 		if udpLayer := pkt.Layer(layers.LayerTypeUDP); udpLayer != nil {
 			udp, _ := udpLayer.(*layers.UDP)
 			addL4Ports(&con, uint16(udp.SrcPort), uint16(udp.DstPort), 17)
-			return
+			return con, nil
 		}
 		if tcpLayer := pkt.Layer(layers.LayerTypeTCP); tcpLayer != nil {
 			tcp, _ := tcpLayer.(*layers.TCP)
 			addL4Ports(&con, uint16(tcp.SrcPort), uint16(tcp.DstPort), 6)
-			return
+			return con, nil
 		}
-		err = fmt.Errorf("could not decode IPv4 packet")
-	} else if version == 6 {
+		return nil, fmt.Errorf("could not decode IPv4 packet")
+	}
+
+	if version == 6 {
 		pkt := gopacket.NewPacket(data, layers.LayerTypeIPv6, gopacket.NoCopy)
 		addIPv6IPTuple(&con, pkt)
 		if icmp6Layer := pkt.Layer(layers.LayerTypeICMPv6); icmp6Layer != nil {
@@ -85,8 +87,7 @@ func extractConFromPayload(data []byte) (con conntrack.Con, err error) {
 			icmpCode := typeCode.Code()
 
 			if icmpType != 128 || icmpCode != 0 {
-				err = fmt.Errorf("ignoring non-echo-request ICMPv6 packets")
-				return
+				return nil, fmt.Errorf("ignoring non-echo-request ICMPv6 packets")
 			}
 
 			if echoLayer := pkt.Layer(layers.LayerTypeICMPv6Echo); echoLayer != nil {
@@ -100,24 +101,21 @@ func extractConFromPayload(data []byte) (con conntrack.Con, err error) {
 					Icmpv6Code: &icmpCode,
 					Icmpv6ID:   &echo.Identifier,
 				}
-				return
+				return con, nil
 			}
-			err = fmt.Errorf("could not decode ICMPv6 packet")
-			return
+			return nil, fmt.Errorf("could not decode ICMPv6 packet")
 		}
 		if udpLayer := pkt.Layer(layers.LayerTypeUDP); udpLayer != nil {
 			udp, _ := udpLayer.(*layers.UDP)
 			addL4Ports(&con, uint16(udp.SrcPort), uint16(udp.DstPort), 17)
-			return
+			return con, nil
 		}
 		if tcpLayer := pkt.Layer(layers.LayerTypeTCP); tcpLayer != nil {
 			tcp, _ := tcpLayer.(*layers.TCP)
 			addL4Ports(&con, uint16(tcp.SrcPort), uint16(tcp.DstPort), 6)
-			return
+			return con, nil
 		}
-		err = fmt.Errorf("could not decode IPv6 packet")
-	} else {
-		err = fmt.Errorf("could not decode packet (non-IPv4/IPv6)")
+		return nil, fmt.Errorf("could not decode IPv6 packet")
 	}
-	return
+	return nil, fmt.Errorf("could not decode packet (non-IPv4/IPv6)")
 }
