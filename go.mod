@@ -7,7 +7,7 @@ require (
 	github.com/florianl/go-nflog/v2 v2.1.0
 	github.com/google/gopacket v1.1.19
 	github.com/mdlayher/netlink v1.8.0
-	github.com/prometheus/client_golang v1.23.0
+	github.com/prometheus/client_golang v1.23.2
 	github.com/x-way/iptables-tracer v0.0.0-20250908190543-8c860aeceeeb
 	github.com/x-way/pktdump v0.0.6
 	golang.org/x/sys v0.35.0
@@ -20,8 +20,9 @@ require (
 	github.com/mdlayher/socket v0.5.1 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/prometheus/client_model v0.6.2 // indirect
-	github.com/prometheus/common v0.65.0 // indirect
+	github.com/prometheus/common v0.66.1 // indirect
 	github.com/prometheus/procfs v0.17.0 // indirect
+	go.yaml.in/yaml/v2 v2.4.2 // indirect
 	golang.org/x/net v0.43.0 // indirect
 	golang.org/x/sync v0.16.0 // indirect
 	google.golang.org/protobuf v1.36.8 // indirect
