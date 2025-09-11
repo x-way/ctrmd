@@ -59,7 +59,7 @@ github.com/x-way/iptables-tracer/pkg/ctprint
 # github.com/x-way/pktdump v0.0.6
 ## explicit; go 1.19
 github.com/x-way/pktdump
-# go.yaml.in/yaml/v2 v2.4.2
+# go.yaml.in/yaml/v2 v2.4.3
 ## explicit; go 1.15
 go.yaml.in/yaml/v2
 # golang.org/x/net v0.44.0
