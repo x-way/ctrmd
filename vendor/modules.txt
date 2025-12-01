@@ -4,7 +4,7 @@ github.com/beorn7/perks/quantile
 # github.com/cespare/xxhash/v2 v2.3.0
 ## explicit; go 1.11
 github.com/cespare/xxhash/v2
-# github.com/florianl/go-conntrack v0.4.0
+# github.com/florianl/go-conntrack v0.5.0
 ## explicit; go 1.13
 github.com/florianl/go-conntrack
 github.com/florianl/go-conntrack/internal/unix
