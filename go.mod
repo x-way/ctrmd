@@ -1,6 +1,6 @@
 module github.com/x-way/ctrmd
 
-go 1.24.6
+go 1.25.0
 
 require (
 	github.com/florianl/go-conntrack v0.6.0
@@ -23,7 +23,7 @@ require (
 	github.com/prometheus/common v0.67.5 // indirect
 	github.com/prometheus/procfs v0.19.2 // indirect
 	go.yaml.in/yaml/v2 v2.4.3 // indirect
-	golang.org/x/net v0.50.0 // indirect
+	golang.org/x/net v0.51.0 // indirect
 	golang.org/x/sync v0.19.0 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 )
