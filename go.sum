@@ -39,8 +39,8 @@ github.com/prometheus/procfs v0.20.1 h1:XwbrGOIplXW/AU3YhIhLODXMJYyC1isLFfYCsTEy
 github.com/prometheus/procfs v0.20.1/go.mod h1:o9EMBZGRyvDrSPH1RqdxhojkuXstoe4UlK79eF5TGGo=
 github.com/stretchr/testify v1.11.1 h1:7s2iGBzp5EwR7/aIZr8ao5+dra3wiQyKjjFuvgVKu7U=
 github.com/stretchr/testify v1.11.1/go.mod h1:wZwfW3scLgRK+23gO65QZefKpKQRnfz6sD981Nm4B6U=
-github.com/x-way/iptables-tracer v0.0.0-20260402075456-4f6a52196fdf h1:NWi+6GrAgFjzTHhHGy/jmhzqgE2EFmpeQveuyaiWQ7w=
-github.com/x-way/iptables-tracer v0.0.0-20260402075456-4f6a52196fdf/go.mod h1:pNa5XshYIRMdRpM4nTaWSTt0pHNY2l94V4220Jc2/7g=
+github.com/x-way/iptables-tracer v0.0.0-20260408170349-9eb1bee129f2 h1:g5+s2g6HUUsvNfL4ehP7WR4RvXGm2ob3otjwuaOWqRw=
+github.com/x-way/iptables-tracer v0.0.0-20260408170349-9eb1bee129f2/go.mod h1:C0Yjicwln2EV5r8WFbq/e/si34uQgyYktbwqQjIyMU0=
 github.com/x-way/pktdump v0.0.6 h1:L+qxehNc2VM9fwlXOrwZo/1y2C88Rk8RS49zAmvL1tA=
 github.com/x-way/pktdump v0.0.6/go.mod h1:4+6eLfouhVeRv3wrV78UOX/E3lxq5ooJs8CWc5+LwxE=
 go.uber.org/goleak v1.3.0 h1:2K3zAYmnTNqV73imy9J1T3WC+gmCePx2hEGkimedGto=
@@ -67,8 +67,8 @@ golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20220728004956-3c1f35247d10/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
-golang.org/x/sys v0.42.0 h1:omrd2nAlyT5ESRdCLYdm3+fMfNFE/+Rf4bDIQImRJeo=
-golang.org/x/sys v0.42.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=
+golang.org/x/sys v0.43.0 h1:Rlag2XtaFTxp19wS8MXlJwTvoh8ArU6ezoyFsMyCTNI=
+golang.org/x/sys v0.43.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=
 golang.org/x/term v0.0.0-20210927222741-03fcf44c2211/go.mod h1:jbD1KX2456YbFQfuXm/mYQcufACuNUgVhRMnK/tPxf8=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.7/go.mod h1:u+2+/6zg+i71rQMx5EYifcz6MCKuco9NR6JIITiCfzQ=
