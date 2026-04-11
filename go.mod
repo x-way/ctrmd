@@ -6,7 +6,7 @@ require (
 	github.com/florianl/go-conntrack v0.7.0
 	github.com/florianl/go-nflog/v2 v2.3.0
 	github.com/google/gopacket v1.1.19
-	github.com/mdlayher/netlink v1.10.0
+	github.com/mdlayher/netlink v1.11.0
 	github.com/prometheus/client_golang v1.23.2
 	github.com/x-way/iptables-tracer v0.0.0-20260410014833-bdf13c92b483
 	github.com/x-way/pktdump v0.0.6
