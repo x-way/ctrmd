@@ -38,7 +38,7 @@ func addL4Ports(con *conntrack.Con, srcPort, dstPort uint16, proto uint8) {
 
 func extractConFromPayload(data []byte) (conntrack.Con, error) {
 	var con conntrack.Con
-	version := (data)[0] >> 4
+	version := data[0] >> 4
 	if version == 4 {
 		pkt := gopacket.NewPacket(data, layers.LayerTypeIPv4, gopacket.NoCopy)
 		addIPv4IPTuple(&con, pkt)
