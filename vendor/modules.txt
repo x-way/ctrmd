@@ -23,7 +23,7 @@ github.com/google/go-cmp/cmp/internal/value
 ## explicit; go 1.12
 github.com/google/gopacket
 github.com/google/gopacket/layers
-# github.com/mdlayher/netlink v1.11.1
+# github.com/mdlayher/netlink v1.11.2
 ## explicit; go 1.25.0
 github.com/mdlayher/netlink
 github.com/mdlayher/netlink/nlenc
@@ -53,7 +53,7 @@ github.com/prometheus/common/model
 github.com/prometheus/procfs
 github.com/prometheus/procfs/internal/fs
 github.com/prometheus/procfs/internal/util
-# github.com/x-way/iptables-tracer v0.0.0-20260509042623-ae5618b47228
+# github.com/x-way/iptables-tracer v0.0.0-20260516133231-ad7c437836e9
 ## explicit; go 1.25.0
 github.com/x-way/iptables-tracer/pkg/ctprint
 # github.com/x-way/pktdump v0.0.6
