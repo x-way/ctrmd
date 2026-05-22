@@ -53,7 +53,7 @@ github.com/prometheus/common/model
 github.com/prometheus/procfs
 github.com/prometheus/procfs/internal/fs
 github.com/prometheus/procfs/internal/util
-# github.com/x-way/iptables-tracer v0.0.0-20260522003524-91c5d18d916f
+# github.com/x-way/iptables-tracer v0.0.0-20260522084915-3361bab9d061
 ## explicit; go 1.25.0
 github.com/x-way/iptables-tracer/pkg/ctprint
 # github.com/x-way/pktdump v0.0.6
@@ -62,7 +62,7 @@ github.com/x-way/pktdump
 # go.yaml.in/yaml/v2 v2.4.4
 ## explicit; go 1.15
 go.yaml.in/yaml/v2
-# golang.org/x/net v0.54.0
+# golang.org/x/net v0.55.0
 ## explicit; go 1.25.0
 golang.org/x/net/bpf
 # golang.org/x/sync v0.20.0
