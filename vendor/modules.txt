@@ -27,7 +27,7 @@ github.com/google/gopacket/layers
 ## explicit; go 1.25.0
 github.com/mdlayher/netlink
 github.com/mdlayher/netlink/nlenc
-# github.com/mdlayher/socket v0.6.0
+# github.com/mdlayher/socket v0.6.1
 ## explicit; go 1.25.0
 github.com/mdlayher/socket
 # github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
@@ -53,7 +53,7 @@ github.com/prometheus/common/model
 github.com/prometheus/procfs
 github.com/prometheus/procfs/internal/fs
 github.com/prometheus/procfs/internal/util
-# github.com/x-way/iptables-tracer v0.0.0-20260522084915-3361bab9d061
+# github.com/x-way/iptables-tracer v0.0.0-20260526160345-20f14c2a4aba
 ## explicit; go 1.25.0
 github.com/x-way/iptables-tracer/pkg/ctprint
 # github.com/x-way/pktdump v0.0.6

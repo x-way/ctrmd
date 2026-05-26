@@ -23,8 +23,8 @@ github.com/mdlayher/netlink v1.6.2/go.mod h1:O1HXX2sIWSMJ3Qn1BYZk1yZM+7iMki/uYGG
 github.com/mdlayher/netlink v1.11.2 h1:HKh2jqe+omdSWcQ88nrT7INE61B0NXfiSPFdgL4YbNI=
 github.com/mdlayher/netlink v1.11.2/go.mod h1:uT2Yc/QLaZubzDpZIBi9d4GoeLwtp3x1AMeqSRrK2sA=
 github.com/mdlayher/socket v0.2.3/go.mod h1:bz12/FozYNH/VbvC3q7TRIK/Y6dH1kCKsXaUeXi/FmY=
-github.com/mdlayher/socket v0.6.0 h1:ScZPaAGyO1icQnbFrhPM8mnXyMu9qukC1K4ZoM2IQKU=
-github.com/mdlayher/socket v0.6.0/go.mod h1:q7vozUAnxSqnjHc12Fik5yUKIzfZ8ITCfMkhOtE9z18=
+github.com/mdlayher/socket v0.6.1 h1:M7uj2NtuujUY4mYr1C57NmfNiRHbkKpnBxO856lsc3A=
+github.com/mdlayher/socket v0.6.1/go.mod h1:+/SGtqc9V+5dAuRgQsU0fGBI+oRDiW7O2Obx10OIWfg=
 github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 h1:C3w9PqII01/Oq1c1nUAm88MOHcQC9l5mIlSMApZMrHA=
 github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822/go.mod h1:+n7T8mK8HuQTcFwEeznm/DIxMOiR9yIdICNftLE1DvQ=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
@@ -39,8 +39,8 @@ github.com/prometheus/procfs v0.20.1 h1:XwbrGOIplXW/AU3YhIhLODXMJYyC1isLFfYCsTEy
 github.com/prometheus/procfs v0.20.1/go.mod h1:o9EMBZGRyvDrSPH1RqdxhojkuXstoe4UlK79eF5TGGo=
 github.com/stretchr/testify v1.11.1 h1:7s2iGBzp5EwR7/aIZr8ao5+dra3wiQyKjjFuvgVKu7U=
 github.com/stretchr/testify v1.11.1/go.mod h1:wZwfW3scLgRK+23gO65QZefKpKQRnfz6sD981Nm4B6U=
-github.com/x-way/iptables-tracer v0.0.0-20260522084915-3361bab9d061 h1:6VqqiVmWGAbLLF/nOORhROcxODPrbDK/Zl7OQ6W1R/c=
-github.com/x-way/iptables-tracer v0.0.0-20260522084915-3361bab9d061/go.mod h1:CpKY8ckJde1oLTomqnwY9WgQdvIn6YyWOYXKMDt9Y0A=
+github.com/x-way/iptables-tracer v0.0.0-20260526160345-20f14c2a4aba h1:PP3mbMocOvfbtCgxISRUJ35riQdeb3K6RlZ/1tGrzu0=
+github.com/x-way/iptables-tracer v0.0.0-20260526160345-20f14c2a4aba/go.mod h1:Vi3jTiON7IVRbrprRUq0XrRru3zmSgUR3Lhf0iGj/3M=
 github.com/x-way/pktdump v0.0.6 h1:L+qxehNc2VM9fwlXOrwZo/1y2C88Rk8RS49zAmvL1tA=
 github.com/x-way/pktdump v0.0.6/go.mod h1:4+6eLfouhVeRv3wrV78UOX/E3lxq5ooJs8CWc5+LwxE=
 go.uber.org/goleak v1.3.0 h1:2K3zAYmnTNqV73imy9J1T3WC+gmCePx2hEGkimedGto=
