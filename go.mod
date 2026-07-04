@@ -9,7 +9,7 @@ require (
 	github.com/mdlayher/netlink v1.11.2
 	github.com/prometheus/client_golang v1.23.2
 	github.com/x-way/iptables-tracer v0.0.0-20260613202709-42c6fa2bca73
-	github.com/x-way/pktdump v0.0.6
+	github.com/x-way/pktdump v0.0.7
 	golang.org/x/sys v0.46.0
 )
 
