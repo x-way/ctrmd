@@ -41,8 +41,8 @@ github.com/stretchr/testify v1.11.1 h1:7s2iGBzp5EwR7/aIZr8ao5+dra3wiQyKjjFuvgVKu
 github.com/stretchr/testify v1.11.1/go.mod h1:wZwfW3scLgRK+23gO65QZefKpKQRnfz6sD981Nm4B6U=
 github.com/x-way/iptables-tracer v0.0.0-20260613202709-42c6fa2bca73 h1:P//3JBSKGP0fv7lvsebLb4EQTIHMKlSqDp+CSi8UqBg=
 github.com/x-way/iptables-tracer v0.0.0-20260613202709-42c6fa2bca73/go.mod h1:85F6gI9fgkK24EkF2rn2HKPNvS1Z83Qn2TCOj+4aFQY=
-github.com/x-way/pktdump v0.0.6 h1:L+qxehNc2VM9fwlXOrwZo/1y2C88Rk8RS49zAmvL1tA=
-github.com/x-way/pktdump v0.0.6/go.mod h1:4+6eLfouhVeRv3wrV78UOX/E3lxq5ooJs8CWc5+LwxE=
+github.com/x-way/pktdump v0.0.7 h1:R9JC2FAbHuYlsbG7Cx0WHHu/+pXGtvtlFEgjY1s2O3s=
+github.com/x-way/pktdump v0.0.7/go.mod h1:QoqCXnORg+XtffHRMplMABvoyUGncU/IG9l89urAC74=
 go.uber.org/goleak v1.3.0 h1:2K3zAYmnTNqV73imy9J1T3WC+gmCePx2hEGkimedGto=
 go.uber.org/goleak v1.3.0/go.mod h1:CoHD4mav9JJNrW/WLlf7HGZPjdw8EucARQHekz1X6bE=
 go.yaml.in/yaml/v2 v2.4.4 h1:tuyd0P+2Ont/d6e2rl3be67goVK4R6deVxCUX5vyPaQ=
