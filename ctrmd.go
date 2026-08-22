@@ -78,10 +78,9 @@ func main() {
 	defer nfct.Close()
 
 	config := nflog.Config{
-		Group:       uint16(*nflogGroup),
-		Copymode:    nflog.CopyPacket,
-		Flags:       nflog.FlagConntrack,
-		ReadTimeout: 30 * time.Second,
+		Group:    uint16(*nflogGroup),
+		Copymode: nflog.CopyPacket,
+		Flags:    nflog.FlagConntrack,
 	}
 	logger.Printf("Opening NFLOG socket for group %d", *nflogGroup)
 	nfl, err := nflog.Open(&config)
