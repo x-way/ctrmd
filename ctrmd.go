@@ -59,6 +59,10 @@ func main() {
 	logger := log.New(syslogger, "", log.LstdFlags)
 	flag.Parse()
 
+	if *nflogGroup < 0 || *nflogGroup > 65535 {
+		logger.Fatalf("Invalid NFLOG group %d: must be between 0 and 65535", *nflogGroup)
+	}
+
 	if *debug {
 		logger.SetOutput(os.Stdout)
 	}
@@ -75,10 +79,10 @@ func main() {
 	if err != nil {
 		logger.Fatalf("Could not open conntrack socket: %v", err)
 	}
-	defer nfct.Close()
+	defer func() { _ = nfct.Close() }()
 
 	config := nflog.Config{
-		Group:    uint16(*nflogGroup),
+		Group:    uint16(*nflogGroup), // #nosec G115 -- range-checked (0-65535) above
 		Copymode: nflog.CopyPacket,
 		Flags:    nflog.FlagConntrack,
 	}
@@ -87,7 +91,7 @@ func main() {
 	if err != nil {
 		logger.Fatalf("Could not open nflog socket: %v", err)
 	}
-	defer nfl.Close()
+	defer func() { _ = nfl.Close() }()
 
 	fn := func(m nflog.Attribute) int {
 		var ctFamily conntrack.Family
@@ -226,15 +230,16 @@ func startMetricsServer(ctx context.Context, logger *log.Logger, socket string) 
 		return
 	}
 	metricsServer := &http.Server{
-		Handler: promhttp.Handler(),
+		Handler:           promhttp.Handler(),
+		ReadHeaderTimeout: 5 * time.Second,
 	}
 	go func() {
 		if err := metricsServer.Serve(unixListener); err != nil && err != http.ErrServerClosed {
 			logger.Printf("Metrics server failed: %s", err)
 		}
-		unixListener.Close()
+		_ = unixListener.Close()
 	}()
-	go func() {
+	go func() { // #nosec G118 -- outer ctx is already Done() here; a fresh Background()+timeout is required for the shutdown grace period
 		<-ctx.Done()
 		shutdownCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
