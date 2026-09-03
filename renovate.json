@@ -46,6 +46,9 @@
     {
       "matchPackageNames": [
         "github.com/google/go-cmp",
+        "github.com/prometheus/client_golang",
+        "github.com/prometheus/common",
+        "github.com/prometheus/procfs",
         "golang.org/x/crypto",
         "golang.org/x/image",
         "golang.org/x/mod",
