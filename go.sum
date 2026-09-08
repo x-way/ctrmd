@@ -35,8 +35,8 @@ github.com/prometheus/procfs v0.22.0 h1:6q9+/JL9IKAPbCmBrv9n5O5Ty3NKnciV5X7YGw0o
 github.com/prometheus/procfs v0.22.0/go.mod h1:CvmFr/GVhIjIvWJZW3tgkODBQMRIf0EyWMQLHCHab58=
 github.com/stretchr/testify v1.12.1 h1:EuwCh5fleGS7H32xRwO3wRGT7DxrDhLAT6FF8MpWDWE=
 github.com/stretchr/testify v1.12.1/go.mod h1:MDEgiDPPsNp5cuIrHPPCyornHKgEVbtFUmoNlxoYthg=
-github.com/x-way/iptables-tracer v0.0.0-20260830033532-3c56d638d5ab h1:Y2oX/ml3F/JIwgwfZV1JAcs0WBBZTV6GzvpfrwEkvOU=
-github.com/x-way/iptables-tracer v0.0.0-20260830033532-3c56d638d5ab/go.mod h1:A1q2RnbMxcaAMxaESZ4Vnw1KeA9QcHSROM0C0dXd1nU=
+github.com/x-way/iptables-tracer v0.0.0-20260908194133-3fce6d6cdeb3 h1:O3ahyD30DRn0RNcvoLyqVzxYGk0R7MPQPMU5iVcmsc0=
+github.com/x-way/iptables-tracer v0.0.0-20260908194133-3fce6d6cdeb3/go.mod h1:JCyVZ1qt+v8Xc1u4L0OQf2QsVmjonFGp8Xtx5b3XQhQ=
 github.com/x-way/pktdump v0.0.7 h1:R9JC2FAbHuYlsbG7Cx0WHHu/+pXGtvtlFEgjY1s2O3s=
 github.com/x-way/pktdump v0.0.7/go.mod h1:QoqCXnORg+XtffHRMplMABvoyUGncU/IG9l89urAC74=
 go.uber.org/goleak v1.3.0 h1:2K3zAYmnTNqV73imy9J1T3WC+gmCePx2hEGkimedGto=
