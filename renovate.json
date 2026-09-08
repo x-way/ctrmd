@@ -49,12 +49,14 @@
         "github.com/prometheus/client_golang",
         "github.com/prometheus/common",
         "github.com/prometheus/procfs",
+        "golang.org/x/arch",
         "golang.org/x/crypto",
         "golang.org/x/image",
         "golang.org/x/mod",
         "golang.org/x/net",
         "golang.org/x/sync",
         "golang.org/x/sys",
+        "golang.org/x/text",
         "golang.org/x/time"
       ],
       "matchUpdateTypes": [
