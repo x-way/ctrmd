@@ -8,9 +8,9 @@ require (
 	github.com/google/gopacket v1.1.19
 	github.com/mdlayher/netlink v1.11.2
 	github.com/prometheus/client_golang v1.24.1
-	github.com/x-way/iptables-tracer v0.0.0-20260908194133-3fce6d6cdeb3
+	github.com/x-way/iptables-tracer v0.0.0-20260909004604-978881190524
 	github.com/x-way/pktdump v0.0.7
-	golang.org/x/sys v0.47.0
+	golang.org/x/sys v0.48.0
 )
 
 require (
@@ -22,7 +22,7 @@ require (
 	github.com/prometheus/client_model v0.6.3 // indirect
 	github.com/prometheus/common v0.71.0 // indirect
 	github.com/prometheus/procfs v0.22.0 // indirect
-	golang.org/x/net v0.58.0 // indirect
+	golang.org/x/net v0.59.0 // indirect
 	golang.org/x/sync v0.23.0 // indirect
 	google.golang.org/protobuf v1.36.12 // indirect
 )
