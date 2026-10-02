@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
+    "group:allNonMajor",
     ":disableDependencyDashboard"
   ],
   "assignees": [
@@ -89,6 +90,12 @@
       "reviewers": [],
       "assignees": [],
       "automerge": true
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "github actions"
     }
   ]
 }
