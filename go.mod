@@ -10,7 +10,7 @@ require (
 	github.com/prometheus/client_golang v1.25.0
 	github.com/x-way/iptables-tracer v0.0.0-20261028032652-5fd8268f5afe
 	github.com/x-way/pktdump v0.0.7
-	golang.org/x/sys v0.49.0
+	golang.org/x/sys v0.50.0
 )
 
 require (
@@ -24,6 +24,6 @@ require (
 	github.com/prometheus/common v0.73.1 // indirect
 	github.com/prometheus/procfs v0.23.0 // indirect
 	golang.org/x/net v0.62.0 // indirect
-	golang.org/x/sync v0.24.0 // indirect
+	golang.org/x/sync v0.25.0 // indirect
 	google.golang.org/protobuf v1.36.12 // indirect
 )
